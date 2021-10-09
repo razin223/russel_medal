@@ -52,10 +52,12 @@
         if (!empty($Data->district_id)) {
             $DistrictId = $Data->district_id;
             $DivisionId = $Data->getDistrict->division_id;
-            $CountryId = $Data->getDistrict->getDivision->country_id;
-        } else {
-            $CountryId = 1;
         }
+        
+        if (!empty($Data->permanent_address_district_id)) {
+            $PermanentDistrictId = $Data->permanent_address_district_id;
+            $PermanentDivisionId = $Data->getPermanentDistrict->division_id;
+        } 
         ?>
         <div class="row">
             <div class="col-12 col-md-8 offset-md-2 hidden" id="profile_edit">
@@ -107,6 +109,23 @@
                                     </select>
                                 </div>
                             </div>
+                            <div class="form-group row p-1">
+                                <label class="col-12"><span class="text-danger">*</span> শ্রেণী: </label>
+                                <div class="col-12">
+                                    <select name="class" class="form-control">
+                                        <option value=""></option>
+                                        <?php
+                                        
+                                        foreach (['Yes'=>"হ‌্যৃঁ",'No'=>"না"] as $key => $value) {
+                                            echo "<option value='{$key}'";
+                                            echo ($Data->gender == $key) ? "selected" : "";
+                                            echo ">{$value}</option>";
+                                        }
+                                        ?>
+                                    </select>
+                                </div>
+                            </div>
+                            
                             <div class="form-group row p-1">
                                 <label class="col-12"><span class="text-danger">*</span> বিদ‌্যালয়ের নাম: </label>
                                 <div class="col-12">
