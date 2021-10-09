@@ -31,6 +31,8 @@ class ApplicationController extends Controller {
     }
 
     public function store(Request $request) {
+        
+        dd($request->file);
         $Required = [
             'sector_id' => 'required',
             'heading' => 'required|max:1000',
