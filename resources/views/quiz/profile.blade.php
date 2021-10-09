@@ -164,7 +164,7 @@
                                 <label class="col-12"><span class="text-danger">*</span> অভিভাবকের মোবাইল নম্বর: </label>
                                 <div class="col-12">
                                     <input type="text" name="school" value="{{$Data->school}}" class="form-control" placeholder="আপনার অভিভাবকের মোবাইল নম্বর লিখুন"/>
-                                    <span class="text-info">(১১ ডিজিট মোবাইল নম্বর লিখুন)</span>
+                                    <span class="text-info">(১১ ডিজিট মোবাইল নম্বর ইংরেজিতে লিখুন)</span>
                                 </div>
                             </div>
                             <div class="form-group row p-1">

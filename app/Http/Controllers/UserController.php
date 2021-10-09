@@ -870,14 +870,21 @@ class UserController extends Controller {
         $request->validate($Required, $Message);
 
         $User->name = $request->name;
+        $User->class = $request->name;
+        $User->special_child = $request->special_child;
+        $User->gender = $request->gender;
+        $User->father_name = $request->father_name;
+        $User->father_name = $request->father_name;
+        $User->mother_name = $request->mother_name;
+        $User->guardian_name = $request->guardian_name;
+        $User->guardian_mobile_no = $request->guardian_mobile_no;
+        $User->guardian_email = $request->guardian_email;
         $User->address = $request->address;
         $User->district_id = $request->district_id;
-        $User->class = $request->class;
-        $User->school = $request->school;
+        $User->permanent_address = $request->permanent_address;
+        
         //$User->date_of_birth = $request->date_of_birth;
-        $User->gender = $request->gender;
-        $User->nationality = $request->nationality;
-        $User->mobile_number = $request->mobile_number;
+        
 
         if ($request->hasFile('file')) {
 
