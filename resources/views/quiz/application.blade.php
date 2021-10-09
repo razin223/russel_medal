@@ -78,7 +78,7 @@
 </style>
 
 <section class="breadcrumbs">
-    <h2 class="text-center">শেখ রাসেল অনলাইন পদক প্রতিযোগিতা ২০২১</h2>
+    <h2 class="text-center">শেখ রাসেল অনলাইন পদক - ২০২১</h2>
 </section>
 <!-- ======= Cta Section ======= -->
 <section class="services" style="background-color: #fff; padding-top: 20px">
@@ -87,6 +87,17 @@
         <div class="row">
             <div class="col-12 " style=" text-align: justify;">
                 
+                <form action="{{route('apply')}}" method="post">
+                    @csrf
+                    <div class="form-group">
+                        <b>অবদানের শিরোনাম: </b>
+                        <input type="text" name="heading" class="form-conrol" maxlength="255"/>
+                    </div>
+                    <div class="form-group">
+                        <b>কি কি অবদান রেখেছেন তার বিস্তারিত (১০০ শব্দের মধ‌্যে): </b>
+                        <textarea name="details" class="form-control" rows="5"></textarea>
+                    </div>
+                </form>
 
 
             </div>
