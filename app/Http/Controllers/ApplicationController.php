@@ -19,16 +19,11 @@ class ApplicationController extends Controller {
 
         $Data = \App\User::find(auth()->id());
 
-        if ($Data->picture != null) {
-            return redirect(route('profile_update'))->with('error', 'আপনার প্রোফাইল আপডেট করুন। তারপর আবেদন করতে পারবেন।');
+        if ($Data->picture == null) {
+            return redirect(route('quiz_profile'))->with('error', 'আপনার প্রোফাইল আপডেট করুন। তারপর আবেদন করতে পারবেন।');
         }
 
         return view('quiz.application');
-
-
-
-
-        return view('new-admin.' . $request->route()->getName(), ['SearchData' => $Data, 'title' => "Category List"]);
     }
 
     public function create(Request $request) {
