@@ -286,7 +286,7 @@
                 <table class="table" style="border: solid lightgray 1px">
                     <tbody>
                         <tr>
-                            <td rowspan="4" style="border: solid lightgray 1px" class="text-center">
+                            <td rowspan="3" style="border: solid lightgray 1px" class="text-center">
                                 <?php
                                 if ($Data->picture != null) {
                                     ?>
