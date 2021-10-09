@@ -116,8 +116,8 @@
                         <textarea name="details" class="form-control" rows="5"></textarea>
                     </div>
                     <div class="form-group">
-                        <b>প্রমানক (লিংক, প্রত‌্যয়ন পত্র, নিউজ লিংক, ইউটিউব লিংক, অডিও ভিডিও ফাইল ইত‌্যাদি, একাধিক দেওয়া যাবে) : </b>
-                        <a href="javascript:;"><i class="icofont-plus-circle"></i> লিংক যোগ করুন</a>
+                        <b>প্রমানক (লিংক, প্রত‌্যয়ন পত্র, নিউজ লিংক, ইউটিউব লিংক, অডিও ভিডিও ফাইল ইত‌্যাদি, একাধিক দেওয়া যাবে) : </b><br/>
+                        <a href="javascript:;"><i class="icofont-plus-circle"></i> লিংক যোগ করুন</a> &nbsp;
                         <a href="javascript:;"><i class="icofont-ui-file"></i> ফাইল যোগ করুন</a>
                     </div>
                 </form>
