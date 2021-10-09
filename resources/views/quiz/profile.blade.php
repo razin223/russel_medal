@@ -145,32 +145,32 @@
                             <div class="form-group row p-1">
                                 <label class="col-12"><span class="text-danger">*</span> পিতার নাম: </label>
                                 <div class="col-12">
-                                    <input type="text" name="school" value="{{$Data->school}}" class="form-control" placeholder="আপনার পিতার নাম লিখুন"/>
+                                    <input type="text" name="father_name" value="{{$Data->father_name}}" class="form-control" placeholder="আপনার পিতার নাম লিখুন"/>
                                 </div>
                             </div>
                             <div class="form-group row p-1">
                                 <label class="col-12"><span class="text-danger">*</span> মাতার নাম: </label>
                                 <div class="col-12">
-                                    <input type="text" name="school" value="{{$Data->school}}" class="form-control" placeholder="আপনার মাতরা নাম লিখুন"/>
+                                    <input type="text" name="mother_name" value="{{$Data->mother_name}}" class="form-control" placeholder="আপনার মাতরা নাম লিখুন"/>
                                 </div>
                             </div>
                             <div class="form-group row p-1">
                                 <label class="col-12"><span class="text-danger">*</span> অভিভাবকের নাম: </label>
                                 <div class="col-12">
-                                    <input type="text" name="school" value="{{$Data->school}}" class="form-control" placeholder="আপনার অভিভাবকের নাম লিখুন"/>
+                                    <input type="text" name="guardian_name" value="{{$Data->guardian_name}}" class="form-control" placeholder="আপনার অভিভাবকের নাম লিখুন"/>
                                 </div>
                             </div>
                             <div class="form-group row p-1">
                                 <label class="col-12"><span class="text-danger">*</span> অভিভাবকের মোবাইল নম্বর: </label>
                                 <div class="col-12">
-                                    <input type="text" name="school" value="{{$Data->school}}" class="form-control" placeholder="আপনার অভিভাবকের মোবাইল নম্বর লিখুন"/>
+                                    <input type="text" name="guardian_mobile_no" value="{{$Data->guardian_mobile_no}}" class="form-control" placeholder="আপনার অভিভাবকের মোবাইল নম্বর লিখুন"/>
                                     <span class="text-info">(১১ ডিজিট মোবাইল নম্বর ইংরেজিতে লিখুন)</span>
                                 </div>
                             </div>
                             <div class="form-group row p-1">
                                 <label class="col-12"> অভিভাবকের ইমেইল ঠিকানা: </label>
                                 <div class="col-12">
-                                    <input type="text" name="school" value="{{$Data->school}}" class="form-control" placeholder="আপনার অভিভাবকের ইমেইল ঠিকানা লিখুন"/>
+                                    <input type="email" name="guardian_email" value="{{$Data->guardian_email}}" class="form-control" placeholder="আপনার অভিভাবকের ইমেইল ঠিকানা লিখুন"/>
                                 </div>
                             </div>
                             
@@ -221,7 +221,7 @@
                             <div class="form-group row p-1">
                                 <label class="col-12"><span class="text-danger">*</span> স্থায়ী ঠিকানা: </label>
                                 <div class="col-12">
-                                    <input type="text" name="address" value="{{$Data->address}}" class="form-control" placeholder="আপনার পূর্ণ স্থায়ী ঠিকানা (বাড়ি নং, রোড নং, থানা, জেলা ইত‌্যাদি) লিখুন"/>
+                                    <input type="text" name="permanent_address" value="{{$Data->permanent_address}}" class="form-control" placeholder="আপনার পূর্ণ স্থায়ী ঠিকানা (বাড়ি নং, রোড নং, থানা, জেলা ইত‌্যাদি) লিখুন"/>
                                 </div>
                             </div>
                             <div class="form-group row p-1">
