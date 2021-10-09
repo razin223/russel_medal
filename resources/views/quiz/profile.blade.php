@@ -53,11 +53,11 @@
             $DistrictId = $Data->district_id;
             $DivisionId = $Data->getDistrict->division_id;
         }
-        
+
         if (!empty($Data->permanent_address_district_id)) {
             $PermanentDistrictId = $Data->permanent_address_district_id;
             $PermanentDivisionId = $Data->getPermanentDistrict->division_id;
-        } 
+        }
         ?>
         <div class="row">
             <div class="col-12 col-md-8 offset-md-2 hidden" id="profile_edit">
@@ -115,8 +115,7 @@
                                     <select name="special_child" class="form-control">
                                         <option value=""></option>
                                         <?php
-                                        
-                                        foreach (['No'=>"না",'Yes'=>"হ্যাঁ",] as $key => $value) {
+                                        foreach (['No' => "না", 'Yes' => "হ্যাঁ",] as $key => $value) {
                                             echo "<option value='{$key}'";
                                             echo ($Data->special_child == $key) ? "selected" : "";
                                             echo ">{$value}</option>";
@@ -141,7 +140,7 @@
                                     </select>
                                 </div>
                             </div>
-                            
+
                             <div class="form-group row p-1">
                                 <label class="col-12"><span class="text-danger">*</span> পিতার নাম: </label>
                                 <div class="col-12">
@@ -173,28 +172,27 @@
                                     <input type="email" name="guardian_email" value="{{$Data->guardian_email}}" class="form-control" placeholder="আপনার অভিভাবকের ইমেইল ঠিকানা লিখুন"/>
                                 </div>
                             </div>
-                            
+
                             <div class="form-group row p-1">
                                 <label class="col-12"><span class="text-danger">*</span> বর্তমান ঠিকানা: </label>
                                 <div class="col-12">
                                     <input type="text" name="address" value="{{$Data->address}}" class="form-control" placeholder="আপনার ঠিকানা (বাড়ি নং, রোড নং, থানা ইত‌্যাদি) লিখুন"/>
                                 </div>
                             </div>
-                           
+
 
                             <div class="form-group row p-1">
                                 <label class="col-12"><span class="text-danger">*</span> বিভাগ: </label>
                                 <div class="col-12">
                                     <select name="division_id" id="division_id" class="form-control">
-                                       
-                                            <option value=""></option>
-                                            <?php
-                                            foreach (\App\Division::orderBy('bn', 'asc')->get() as $value) {
-                                                echo "<option value='{$value->id}'";
-                                                echo ($DivisionId == $value->id) ? "selected" : "";
-                                                echo ">{$value->bn}</option>";
-                                            }
-                                        
+
+                                        <option value=""></option>
+                                        <?php
+                                        foreach (\App\Division::orderBy('bn', 'asc')->get() as $value) {
+                                            echo "<option value='{$value->id}'";
+                                            echo ($DivisionId == $value->id) ? "selected" : "";
+                                            echo ">{$value->bn}</option>";
+                                        }
                                         ?>
                                     </select>
                                 </div>
@@ -230,7 +228,7 @@
                                     {{date("d-m-Y",strtotime($Data->date_of_birth))}} <span class="text-danger">&nbsp;&nbsp;&nbsp;(পরিবর্তন করা সম্ভব নয়)</span>
                                 </div>
                             </div>
-                            
+
                             <div class="form-group row p-1">
                                 <label class="col-12"><span class="text-danger">*</span> ছবি: </label>
                                 <div class="col-12">
@@ -296,8 +294,17 @@
 
             <div class="col-12 col-md-8 offset-md-2 mt-5">
                 <h6 class="bg-warning text-center text-danger w-100 p-2 m-2 mb-5">প্রোফাইলের সকল তথ‌্য আপডেট না করা থাকলে দয়া করে আপডেট করুন। অন‌্যথায় পদক এর জন‌্য আবেদন করতে পারবেন না।</h6>
+
                 <?php
                 $Data = \App\User::find(auth()->id());
+
+                if ($Data->picture != null) {
+                    ?>
+                    <div class="text-center">
+                        <a href="" class="btn btn-info">আবেদন করুন</a>
+                    </div>
+                    <?php
+                }
                 ?>
                 <table class="table" style="border: solid lightgray 1px">
                     <tbody>
@@ -360,7 +367,7 @@
                             <td>অভিভাবকের মোবাইল নম্বর: </td>
                             <td>{{$Data->guardian_mobile_no != null? $Data->guardian_mobile_no: "দেওয়া হয় নাই"}}</td>
                         </tr>
-                         <tr>
+                        <tr>
                             <td>অভিভাবকের ইমেইল: </td>
                             <td>{{$Data->guardian_email != null? $Data->guardian_email: "দেওয়া হয় নাই"}}</td>
                         </tr>
@@ -403,7 +410,7 @@
                             <td>জন্ম তারিখ: </td>
                             <td>{{$Data->date_of_birth != null ? date("d-M-Y",strtotime($Data->date_of_birth)):"দেওয়া হয় নাই"}}</td>
                         </tr>
-                        
+
                         <tr class="text-center">
 
                             <td colspan="2">
