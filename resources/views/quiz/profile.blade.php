@@ -116,7 +116,7 @@
                                         <option value=""></option>
                                         <?php
                                         
-                                        foreach (['Yes'=>"হ্যাঁ",'No'=>"না"] as $key => $value) {
+                                        foreach (['No'=>"না",'Yes'=>"হ্যাঁ",] as $key => $value) {
                                             echo "<option value='{$key}'";
                                             echo ($Data->special_child == $key) ? "selected" : "";
                                             echo ">{$value}</option>";
