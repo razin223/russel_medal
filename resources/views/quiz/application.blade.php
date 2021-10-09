@@ -88,7 +88,7 @@
             <div class="col-12 " style=" text-align: justify;">
 
                 <h4 class="text-center">আবেদন করুন</h4>
-
+                @include("template-admin.fixed-layout.message")
                 <form action="{{route('apply')}}" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
@@ -141,11 +141,11 @@
 </section><!-- End Cta Section -->
 
 <script type="text/javascript">
-    $(document).ready(function(){
-        $("#add_link").click(function(){
+    $(document).ready(function () {
+        $("#add_link").click(function () {
             $("#file_zone").append('<input type="text" class="form-control" name="link[]" placeholder="লিংক"/><br/>');
         });
-        $("#add_file").click(function(){
+        $("#add_file").click(function () {
             $("#file_zone").append('<input type="file" class="form-control" name="file[]" placeholder="ফাইল"/><br/>');
         });
     });
