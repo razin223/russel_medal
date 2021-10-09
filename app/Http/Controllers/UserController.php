@@ -870,7 +870,7 @@ class UserController extends Controller {
         $request->validate($Required, $Message);
 
         $User->name = $request->name;
-        $User->class = $request->name;
+        $User->class = $request->class;
         $User->special_child = $request->special_child;
         $User->gender = $request->gender;
         $User->father_name = $request->father_name;

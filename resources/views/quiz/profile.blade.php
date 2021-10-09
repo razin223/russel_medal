@@ -102,7 +102,7 @@
                                         ];
                                         foreach ($Class as $key => $value) {
                                             echo "<option value='{$key}'";
-                                            echo ($Data->gender == $key) ? "selected" : "";
+                                            echo ($Data->class == $key) ? "selected" : "";
                                             echo ">{$value} শ্রেণী</option>";
                                         }
                                         ?>
@@ -118,7 +118,7 @@
                                         
                                         foreach (['Yes'=>"হ্যাঁ",'No'=>"না"] as $key => $value) {
                                             echo "<option value='{$key}'";
-                                            echo ($Data->gender == $key) ? "selected" : "";
+                                            echo ($Data->special_child == $key) ? "selected" : "";
                                             echo ">{$value}</option>";
                                         }
                                         ?>
@@ -239,7 +239,7 @@
                                     <?php
                                     if (!empty($Data->picture)) {
                                         ?>
-                                        <img src="{{\Storage::url($Data->picture)}}" style="width: 200px"/>
+                                        <img src="{{$Data->picture}}" style="width: 200px"/>
                                         <?php
                                     }
                                     ?>
