@@ -91,7 +91,7 @@
                     @csrf
                     <div class="form-group">
                         <b>অবদানের শিরোনাম: </b>
-                        <input type="text" name="heading" class="form-conrol" maxlength="255"/>
+                        <input type="text" name="heading" class="form-control" maxlength="255"/>
                     </div>
                     <div class="form-group">
                         <b>কি কি অবদান রেখেছেন তার বিস্তারিত (১০০ শব্দের মধ‌্যে): </b>
