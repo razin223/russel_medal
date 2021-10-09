@@ -5,7 +5,7 @@
         <meta charset="utf-8">
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
         @yield("og_content")
-        <title>শেখ রাসেল</title>
+        <title>শেখ রাসেল পদক</title>
         <meta content="" name="descriptison">
         <meta content="" name="keywords">
 
