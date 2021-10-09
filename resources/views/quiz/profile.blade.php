@@ -295,7 +295,7 @@
 
 
             <div class="col-12 col-md-8 offset-md-2 mt-5">
-                <h6 class="bg-warning text-center text-danger w-100 p-2 m-2 mb-5">প্রোফাইলের সকল তথ‌্য আপডেট না করা থাকলে দয়া করে আপডেট করুন। অন‌্যথায় পদক এ আবেদন করতে পারবেন না।</h6>
+                <h6 class="bg-warning text-center text-danger w-100 p-2 m-2 mb-5">প্রোফাইলের সকল তথ‌্য আপডেট না করা থাকলে দয়া করে আপডেট করুন। অন‌্যথায় পদক এর জন‌্য আবেদন করতে পারবেন না।</h6>
                 <?php
                 $Data = \App\User::find(auth()->id());
                 ?>
