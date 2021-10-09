@@ -86,6 +86,8 @@
 
         <div class="row">
             <div class="col-12 " style=" text-align: justify;">
+                
+                <h4 class="text-center">আবেদন করুন</h4>
 
                 <form action="{{route('apply')}}" method="post">
                     @csrf
