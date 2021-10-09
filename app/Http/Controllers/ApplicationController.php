@@ -17,7 +17,7 @@ class ApplicationController extends Controller {
     public function index(Request $request) {
 
 
-        $Data = \App\User::find(auth() - id());
+        $Data = \App\User::find(auth()->id());
 
         if ($Data->picture != null) {
             return redirect(route('profile_update'))->with('error', 'আপনার প্রোফাইল আপডেট করুন। তারপর আবেদন করতে পারবেন।');
