@@ -636,7 +636,7 @@ class UserController extends Controller {
                         'name' => $User->name,
                         'from' => env("MAIL_FROM_ADDRESS"),
                         'from_name' => env("MAIL_FROM_NAME"),
-                        'subject' => "শেখ রাসেল কুইজ নতুন পাসওয়ার্ড",
+                        'subject' => "শেখ রাসেল পদক নতুন পাসওয়ার্ড",
                         "password" => $VerificationCode
                     ];
                 }
