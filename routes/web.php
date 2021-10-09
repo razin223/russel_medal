@@ -34,6 +34,9 @@ Route::get("/district_get", 'UserController@district_get')->name('district_get')
 Route::post("/profile_update", 'UserController@profile_update')->name('profile_update');
 Route::post("/profile_password_update", 'UserController@profile_password_update')->name('profile_password_update');
 
+Route::get("/apply",'ApplicationController@index')->name('apply');
+Route::post("/apply",'ApplicationController@store');
+
 
 
 Route::get('/register', 'UserController@register_view')->name('register');
