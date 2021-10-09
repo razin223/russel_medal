@@ -43,6 +43,8 @@ class User extends Authenticatable {
         return $this->belongsTo('App\District', 'district_id', 'id');
     }
 
-    
+    public function getPermanentDistrict() {
+        return $this->belongsTo('App\District', 'permanent_address_district_id', 'id');
+    }
 
 }

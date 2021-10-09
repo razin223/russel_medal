@@ -279,11 +279,10 @@
 
 
             <div class="col-12 col-md-8 offset-md-2 mt-5">
-                <h6 class="bg-warning text-center text-danger w-100 p-2 m-2 mb-5">প্রোফাইলের সকল তথ‌্য আপডেট না করা থাকলে দয়া করে আপডেট করুন। অন‌্যথায় কুইজে অংশগ্রহন করতে পারবেন না।</h6>
+                <h6 class="bg-warning text-center text-danger w-100 p-2 m-2 mb-5">প্রোফাইলের সকল তথ‌্য আপডেট না করা থাকলে দয়া করে আপডেট করুন। অন‌্যথায় পদক এ আবেদন করতে পারবেন না।</h6>
                 <?php
                 $Data = \App\User::find(auth()->id());
                 ?>
-                <h4 class="text-center"><?php echo $Data->group == 'Ka' ? "ক" : "খ" ?> গ্রুপ</h4>
                 <table class="table" style="border: solid lightgray 1px">
                     <tbody>
                         <tr>
@@ -302,9 +301,7 @@
                             </td>
                             <td>নাম: {{($Data->name != null)? $Data->name:"দেওয়া হয় নাই"}}</td>
                         </tr>
-                        <tr>
-                            <td>মোবাইল নম্বর: {{$Data->mobile_number != null? $Data->mobile_number: "দেওয়া হয় নাই"}}</td>
-                        </tr>
+
                         <tr>
                             <td>ইমেইল: {{$Data->email}}</td>
                         </tr>
@@ -312,11 +309,23 @@
                             <td>শ্রেণী: {{$Data->class != null? $Class[$Data->class]." শ্রেণী": "দেওয়া হয় নাই"}}</td>
                         </tr>
                         <tr>
-                            <td> বিদ‌্যালয়ের নাম: </td>
-                            <td>{{$Data->school != null? $Data->school: "দেওয়া হয় নাই"}}</td>
+                            <td>পিতার নাম: </td>
+                            <td>{{$Data->father_name != null? $Data->father_name: "দেওয়া হয় নাই"}}</td>
                         </tr>
                         <tr>
-                            <td>ঠিকানা: </td>
+                            <td>মাতার নাম: </td>
+                            <td>{{$Data->mother_name != null? $Data->mother_name: "দেওয়া হয় নাই"}}</td>
+                        </tr>
+                        <tr>
+                            <td>অভিভাবকের নাম: </td>
+                            <td>{{$Data->guardian_name != null? $Data->guardian_name: "দেওয়া হয় নাই"}}</td>
+                        </tr>
+                        <tr>
+                            <td>অভিভাবকের মোবাইল নম্বর: </td>
+                            <td>{{$Data->guardian_mobile_no != null? $Data->guardian_mobile_no: "দেওয়া হয় নাই"}}</td>
+                        </tr>
+                        <tr>
+                            <td>বর্তমান ঠিকানা: </td>
                             <td>
                                 <?php
                                 if ($Data->address != null) {
@@ -332,6 +341,23 @@
                                 ?>
                             </td>
                         </tr>
+                        <tr>
+                            <td>স্থায়ী ঠিকানা: </td>
+                            <td>
+                                <?php
+                                if ($Data->permanent_address != null) {
+                                    ?>
+                                    {{$Data->address}},
+                                    <?php
+                                }
+                                if ($Data->permanent_address_district_id != null) {
+                                    ?>
+                                    {{$Data->getPermanentDistrict->bn}}, {{$Data->getPermanentDistrict->getDivision->bn}}, {{$Data->getPermanentDistrict->getDivision->getCountry->bn}}
+                                    <?php
+                                }
+                                ?>
+                            </td>
+                        </tr>
 
                         <tr>
                             <td>জন্ম তারিখ: </td>
@@ -342,8 +368,20 @@
                             <td>{{$Data->gender != null ? $Gender[$Data->gender]:"দেওয়া হয় নাই"}}</td>
                         </tr>
                         <tr>
-                            <td>জাতীয়তা: </td>
-                            <td>{{$Data->nationality != null ? $Data->getNationality->nationality_bn:"দেওয়া হয় নাই"}}</td>
+                            <td>বিশেষ চাহিদা সম্পন্ন শিশু: </td>
+                            <td>
+                                <?php
+                                if ($Data->special_child != null) {
+                                    ?>
+                                    {{$Data->special_child != 'No' ? "হ‌্যঁা":"না"}}
+                                    <?php
+                                } else {
+                                    ?>
+                                    দেওয়া হয় নাই
+                                    <?php
+                                }
+                                ?>
+                            </td>
                         </tr>
                         <tr class="text-center">
 
