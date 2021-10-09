@@ -112,7 +112,7 @@
                             <div class="form-group row p-1">
                                 <label class="col-12"><span class="text-danger">*</span> বিশেষ চাহিদা সম্পন্ন শিশু: </label>
                                 <div class="col-12">
-                                    <select name="class" class="form-control">
+                                    <select name="special_child" class="form-control">
                                         <option value=""></option>
                                         <?php
                                         
