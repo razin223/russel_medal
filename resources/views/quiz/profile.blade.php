@@ -325,6 +325,26 @@
                             <td>শ্রেণী: {{$Data->class != null? $Class[$Data->class]." শ্রেণী": "দেওয়া হয় নাই"}}</td>
                         </tr>
                         <tr>
+                            <td>লিঙ্গ: </td>
+                            <td>{{$Data->gender != null ? $Gender[$Data->gender]:"দেওয়া হয় নাই"}}</td>
+                        </tr>
+                        <tr>
+                            <td>বিশেষ চাহিদা সম্পন্ন শিশু: </td>
+                            <td>
+                                <?php
+                                if ($Data->special_child != null) {
+                                    ?>
+                                    {{$Data->special_child != 'No' ? "হ্যাঁ":"না"}}
+                                    <?php
+                                } else {
+                                    ?>
+                                    দেওয়া হয় নাই
+                                    <?php
+                                }
+                                ?>
+                            </td>
+                        </tr>
+                        <tr>
                             <td>পিতার নাম: </td>
                             <td>{{$Data->father_name != null? $Data->father_name: "দেওয়া হয় নাই"}}</td>
                         </tr>
@@ -383,26 +403,7 @@
                             <td>জন্ম তারিখ: </td>
                             <td>{{$Data->date_of_birth != null ? date("d-M-Y",strtotime($Data->date_of_birth)):"দেওয়া হয় নাই"}}</td>
                         </tr>
-                        <tr>
-                            <td>লিঙ্গ: </td>
-                            <td>{{$Data->gender != null ? $Gender[$Data->gender]:"দেওয়া হয় নাই"}}</td>
-                        </tr>
-                        <tr>
-                            <td>বিশেষ চাহিদা সম্পন্ন শিশু: </td>
-                            <td>
-                                <?php
-                                if ($Data->special_child != null) {
-                                    ?>
-                                    {{$Data->special_child != 'No' ? "হ্যাঁ":"না"}}
-                                    <?php
-                                } else {
-                                    ?>
-                                    দেওয়া হয় নাই
-                                    <?php
-                                }
-                                ?>
-                            </td>
-                        </tr>
+                        
                         <tr class="text-center">
 
                             <td colspan="2">
