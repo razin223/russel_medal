@@ -106,7 +106,7 @@ class UserController extends Controller {
                     \Mail::to($request->email)->send(new \App\Mail\Mailer($details));
 
 
-                    return redirect(route('registration'))->with('success', 'রেজিস্ট্রেশন সম্পন্ন হয়েছে। দয়া করে আপনার ইমেইলের ইনবক্স/প্রোমোশন/সোসাল সেকশন এ দেখুন। যদি না পান তবে স্প‌্যামবক্স দেখুন।');
+                    return redirect(route('landing'))->with('success', 'রেজিস্ট্রেশন সম্পন্ন হয়েছে। দয়া করে আপনার ইমেইলের ইনবক্স/প্রোমোশন/সোসাল সেকশন এ দেখুন। যদি না পান তবে স্প‌্যামবক্স দেখুন।');
                 }
             }
         } else {
