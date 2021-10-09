@@ -58,22 +58,22 @@ class ApplicationController extends Controller {
             return back()->with('error', 'আপনি ইতিমধ‌্যে এই ক্ষেত্রে আবেদন করেছেন। নতুন করে আর আবেদন এই ক্ষেত্রে আবেদন করতে পারবেন না।');
         }
 
-        $File = [];
+        $Files = [];
         if ($request->file != null) {
             foreach ($request->file as $File) {
                 if ($File->getSize()) {
                     $path = \Storage::disk('s3')->put("attachments", $File, 'public');
                     $url = \Storage::disk('s3')->url($path);
-                    $File[] = $url;
+                    $Files[] = $url;
                 }
             }
         }
 
-        $Link = [];
+        $Links = [];
         if ($request->link != null) {
             foreach ($request->link as $link) {
                 if (!empty($Link)) {
-                    $Link[] = $link;
+                    $Links[] = $link;
                 }
             }
         }
@@ -84,7 +84,7 @@ class ApplicationController extends Controller {
         $Data->sector_id = $request->sector_id;
         $Data->heading = $request->heading;
         $Data->details = $request->details;
-        $Data->attachments = json_encode(['link' => $Link, 'file' => $File]);
+        $Data->attachments = json_encode(['link' => $Links, 'file' => $Files]);
         $Data->status = 'Processing';
         $Data->user_id = auth()->id();
 
