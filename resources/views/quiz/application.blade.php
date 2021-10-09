@@ -120,8 +120,8 @@
                         <a href="javascript:;"><i class="icofont-plus-circle"></i> লিংক যোগ করুন</a> &nbsp;
                         <a href="javascript:;"><i class="icofont-ui-file"></i> ফাইল যোগ করুন</a>
                         <div>
-                            <input type="text" class="form-control" name="link[]" placeholder="লিংক" id="link"/>
-                            <input type="file" class="form-control" name="file[]" placeholder="ফাইল" id="file"/>
+                            <input type="text" class="form-control" name="link[]" placeholder="লিংক" id="link"/><br/>
+                            <input type="file" class="form-control" name="file[]" placeholder="ফাইল" id="file"/><br/>
                         </div>
                     </div>
                 </form>
