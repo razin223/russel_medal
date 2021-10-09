@@ -286,11 +286,11 @@
                 <table class="table" style="border: solid lightgray 1px">
                     <tbody>
                         <tr>
-                            <td rowspan="3" style="border: solid lightgray 1px" class="text-center">
+                            <td rowspan="3" style="border: solid lightgray 1px; width: 160px;" class="text-center" >
                                 <?php
                                 if ($Data->picture != null) {
                                     ?>
-                                    <img src="{{$Data->picture}}" style="max-width: 200px; max-height: 200px"/>
+                                    <img src="{{$Data->picture}}" style="max-width: 150px; max-height: 150px"/>
                                     <?php
                                 } else {
                                     ?>
@@ -323,6 +323,10 @@
                         <tr>
                             <td>অভিভাবকের মোবাইল নম্বর: </td>
                             <td>{{$Data->guardian_mobile_no != null? $Data->guardian_mobile_no: "দেওয়া হয় নাই"}}</td>
+                        </tr>
+                         <tr>
+                            <td>অভিভাবকের ইমেইল: </td>
+                            <td>{{$Data->guardian_email != null? $Data->guardian_email: "দেওয়া হয় নাই"}}</td>
                         </tr>
                         <tr>
                             <td>বর্তমান ঠিকানা: </td>
