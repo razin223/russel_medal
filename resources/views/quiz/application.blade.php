@@ -119,6 +119,10 @@
                         <b>প্রমানক (লিংক, প্রত‌্যয়ন পত্র, নিউজ লিংক, ইউটিউব লিংক, অডিও ভিডিও ফাইল ইত‌্যাদি, একাধিক দেওয়া যাবে) : </b><br/>
                         <a href="javascript:;"><i class="icofont-plus-circle"></i> লিংক যোগ করুন</a> &nbsp;
                         <a href="javascript:;"><i class="icofont-ui-file"></i> ফাইল যোগ করুন</a>
+                        <div>
+                            <input type="text" class="form-control" name="link[]" placeholder="লিংক" id="link"/>
+                            <input type="file" class="form-control" name="file[]" placeholder="ফাইল" id="file"/>
+                        </div>
                     </div>
                 </form>
 
