@@ -87,7 +87,6 @@ class UserController extends Controller {
 
                     $details = [
                         'name' => $request->name,
-                        'group' => 'ক',
                         'to' => $request->email,
                         'from' => env("MAIL_FROM_ADDRESS"),
                         'from_name' => env("MAIL_FROM_NAME"),
@@ -407,7 +406,6 @@ class UserController extends Controller {
             $details = [
                 'to' => $request->email,
                 'name' => $User->name,
-                'group' => ($User->group == 'Ka') ? "ক" : "খ",
                 'from' => env("MAIL_FROM_ADDRESS"),
                 'from_name' => env("MAIL_FROM_NAME"),
                 'subject' => "শেখ রাসেল পদক ইমেইল ভেরিফিকেশন",
@@ -538,7 +536,7 @@ class UserController extends Controller {
 
         $request->validate($Required, $Message);
 
-        $User = \App\User::where('email', $request->email)->where('status', 'Active')->whereNull('google_id')->whereNull('facebook_id')->first();
+        $User = \App\User::where('email', $request->email)->where('status', 'Active')->first();
         if ($User != NULL) {
             $RandomNumber = mt_rand(1000000, 10000000);
             $VerificationCode = $User->id . $RandomNumber;
@@ -553,7 +551,7 @@ class UserController extends Controller {
                     'name' => $User->name,
                     'from' => env("MAIL_FROM_ADDRESS"),
                     'from_name' => env("MAIL_FROM_NAME"),
-                    'subject' => "শেখ রাসেল কুইজ পাসওয়ার্ড সেট",
+                    'subject' => "শেখ রাসেল পদক পাসওয়ার্ড সেট",
                     'id' => $User->id,
                     "code" => $VerificationCode
                 ];
