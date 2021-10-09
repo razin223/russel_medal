@@ -143,10 +143,10 @@
 <script type="text/javascript">
     $(document).ready(function(){
         $("#add_link").click(function(){
-            $("#file_zone").append('<input type"text" class="form-control" name="link[]" placeholder="লিংক"/><br/>');
+            $("#file_zone").append('<input type="text" class="form-control" name="link[]" placeholder="লিংক"/><br/>');
         });
         $("#add_file").click(function(){
-            $("#file_zone").append('<input type"file" class="form-control" name="file[]" placeholder="ফাইল"/><br/>');
+            $("#file_zone").append('<input type="file" class="form-control" name="file[]" placeholder="ফাইল"/><br/>');
         });
     });
 </script>
