@@ -31,8 +31,7 @@ class ApplicationController extends Controller {
     }
 
     public function store(Request $request) {
-        
-        dd($request->file);
+
         $Required = [
             'sector_id' => 'required',
             'heading' => 'required|max:1000',
@@ -60,19 +59,22 @@ class ApplicationController extends Controller {
         }
 
         $File = [];
-        foreach ($request->file as $File) {
-            if ($File->getSize()) {
-                $path = Storage::disk('s3')->put("attachments", $request->file, 'public');
-                $url = Storage::disk('s3')->url($path);
-                $File[] = $url;
+        if ($request->file != null) {
+            foreach ($request->file as $File) {
+                if ($File->getSize()) {
+                    $path = Storage::disk('s3')->put("attachments", $request->file, 'public');
+                    $url = Storage::disk('s3')->url($path);
+                    $File[] = $url;
+                }
             }
         }
 
         $Link = [];
-
-        foreach ($request->link as $Link) {
-            if (!empty($Link)) {
-                $Link[] = $Link;
+        if ($request->file != null) {
+            foreach ($request->link as $Link) {
+                if (!empty($Link)) {
+                    $Link[] = $Link;
+                }
             }
         }
 
@@ -90,7 +92,7 @@ class ApplicationController extends Controller {
 
         //$request->session()->flash('Category created successfully. Category name: ' . $request->category_name . " and display order:" . $request->category_order);
 
-        return redirect(route('quiz_profile'))->with('success','আপনার আবেদন সফল ভাবে সংগৃহীত হয়েছে।');
+        return redirect(route('quiz_profile'))->with('success', 'আপনার আবেদন সফল ভাবে সংগৃহীত হয়েছে।');
     }
 
     public function edit(Request $request, $Category) {
