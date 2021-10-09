@@ -78,7 +78,7 @@
 </style>
 
 <section class="breadcrumbs">
-    <h2 class="text-center">শেখ রাসেল অনলাইন কুইজ প্রতিযোগিতা ২০২১</h2>
+    <h2 class="text-center">শেখ রাসেল অনলাইন পদক প্রতিযোগিতা ২০২১</h2>
 </section>
 <!-- ======= Cta Section ======= -->
 <section class="services" style="background-color: #fff; padding-top: 20px">
