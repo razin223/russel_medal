@@ -110,7 +110,7 @@
                                 </div>
                             </div>
                             <div class="form-group row p-1">
-                                <label class="col-12"><span class="text-danger">*</span> শ্রেণী: </label>
+                                <label class="col-12"><span class="text-danger">*</span> বিশেষ চাহিদা সম্পন্ন শিশু: </label>
                                 <div class="col-12">
                                     <select name="class" class="form-control">
                                         <option value=""></option>
@@ -123,13 +123,6 @@
                                         }
                                         ?>
                                     </select>
-                                </div>
-                            </div>
-                            
-                            <div class="form-group row p-1">
-                                <label class="col-12"><span class="text-danger">*</span> বিদ‌্যালয়ের নাম: </label>
-                                <div class="col-12">
-                                    <input type="text" name="school" value="{{$Data->school}}" class="form-control" placeholder="আপনার বিদ‌্যালয়ের নাম লিখুন"/>
                                 </div>
                             </div>
                             <div class="form-group row p-1">
@@ -148,6 +141,14 @@
                                     </select>
                                 </div>
                             </div>
+                            
+                            <div class="form-group row p-1">
+                                <label class="col-12"><span class="text-danger">*</span> বিদ‌্যালয়ের নাম: </label>
+                                <div class="col-12">
+                                    <input type="text" name="school" value="{{$Data->school}}" class="form-control" placeholder="আপনার বিদ‌্যালয়ের নাম লিখুন"/>
+                                </div>
+                            </div>
+                            
                             <div class="form-group row p-1">
                                 <label class="col-12"><span class="text-danger">*</span> ঠিকানা: </label>
                                 <div class="col-12">
