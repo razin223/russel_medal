@@ -445,7 +445,7 @@
                                 ?>
                                 <tr>
                                     <td>{{$Sl}}</td>
-                                    <td>{{$value->getSector}}</td>
+                                    <td>{{$value->getSector->sector_name}}</td>
                                     <td>{{date("d-M-Y h:i:sA",strtotime($value->created_at))}}</td>
                                     <td>{{$value->status}}</td>
                                 </tr>
