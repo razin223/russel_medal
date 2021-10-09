@@ -62,7 +62,7 @@ class ApplicationController extends Controller {
         if ($request->file != null) {
             foreach ($request->file as $File) {
                 if ($File->getSize()) {
-                    $path = \Storage::disk('s3')->put("attachments", $request->file, 'public');
+                    $path = \Storage::disk('s3')->put("attachments", $File, 'public');
                     $url = \Storage::disk('s3')->url($path);
                     $File[] = $url;
                 }
@@ -70,10 +70,10 @@ class ApplicationController extends Controller {
         }
 
         $Link = [];
-        if ($request->file != null) {
-            foreach ($request->link as $Link) {
+        if ($request->link != null) {
+            foreach ($request->link as $link) {
                 if (!empty($Link)) {
-                    $Link[] = $Link;
+                    $Link[] = $link;
                 }
             }
         }
