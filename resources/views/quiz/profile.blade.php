@@ -116,7 +116,7 @@
                                         <option value=""></option>
                                         <?php
                                         
-                                        foreach (['Yes'=>"হ‌্যৃঁ",'No'=>"না"] as $key => $value) {
+                                        foreach (['Yes'=>"হ্যাঁ",'No'=>"না"] as $key => $value) {
                                             echo "<option value='{$key}'";
                                             echo ($Data->gender == $key) ? "selected" : "";
                                             echo ">{$value}</option>";
@@ -396,7 +396,7 @@
                                 <?php
                                 if ($Data->special_child != null) {
                                     ?>
-                                    {{$Data->special_child != 'No' ? "হ‌্যঁা":"না"}}
+                                    {{$Data->special_child != 'No' ? "হ্যাঁ":"না"}}
                                     <?php
                                 } else {
                                     ?>
