@@ -111,17 +111,18 @@
                     </div>
                     <div class="form-group">
                         <b>অবদানের শিরোনাম: </b>
-                        <input type="text" name="heading" class="form-control" maxlength="255"/>
+                        <input type="text" name="heading" class="form-control" value="{{old('heading')}}" maxlength="255"/>
                     </div>
                     <div class="form-group">
                         <b>কি কি অবদান রেখেছেন তার বিস্তারিত (১০০ শব্দের মধ‌্যে): </b>
-                        <textarea name="details" class="form-control" rows="5"></textarea>
+                        <textarea name="details" class="form-control" rows="5">{{old('details')}}</textarea>
                     </div>
                     <div class="form-group">
                         <b>প্রমানক (লিংক, প্রত‌্যয়ন পত্র, নিউজ লিংক, ইউটিউব লিংক, অডিও ভিডিও ফাইল ইত‌্যাদি, একাধিক দেওয়া যাবে) : </b><br/>
                         <a href="javascript:;" id="add_link"><i class="icofont-plus-circle"></i> লিংক যোগ করুন</a> &nbsp;
                         <a href="javascript:;" id="add_file"><i class="icofont-ui-file"></i> ফাইল যোগ করুন</a>
                         <div id="file_zone">
+                          
                             <input type="text" class="form-control" name="link[]" placeholder="লিংক" id="link"/><br/>
                             <input type="file" class="form-control" name="file[]" placeholder="ফাইল" id="file"/><br/>
                         </div>

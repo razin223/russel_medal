@@ -36,7 +36,6 @@ class ApplicationController extends Controller {
             'heading' => 'required|max:1000',
             'details' => 'required',
             'file.*' => 'mimes:jpg,jpeg,png,JPG,JPEG,PNG,pdf,PDF,mp4,mkv,doc,docx|max:20480',
-            'display' => 'required',
         ];
 
 
