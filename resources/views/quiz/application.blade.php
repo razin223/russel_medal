@@ -89,7 +89,7 @@
 
                 <h4 class="text-center">আবেদন করুন</h4>
 
-                <form action="{{route('apply')}}" method="post">
+                <form action="{{route('apply')}}" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
                         <b>অবদানের ক্ষেত্র: </b>

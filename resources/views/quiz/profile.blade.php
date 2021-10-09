@@ -422,6 +422,47 @@
                 </table>
             </div>
 
+            <div class="col-md-12">
+                <h5 class="text-center">আবেদনসমূহ</h5>
+                <?php
+                $Applications = \App\Application::where('user_id', auth()->id())->get();
+                if ($Applications->count()) {
+                    ?>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>ক্ষেত্র</th>
+                                <th>আবেদনের তারিখ</th>
+                                <th>অবস্থা</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                            $Sl = 0;
+                            foreach ($Applications as $value) {
+                                $Sl++;
+                                ?>
+                                <tr>
+                                    <td>{{$Sl}}</td>
+                                    <td>{{$value->getSector}}</td>
+                                    <td>{{date("d-M-Y h:i:sA",strtotime($value->created_at))}}</td>
+                                    <td>{{$value->status}}</td>
+                                </tr>
+                                <?php
+                            }
+                            ?>
+                        </tbody>
+                    </table>
+                    <?php
+                } else {
+                    ?>
+                    <p class="text-center">কোন আবেদন পাওয়া যায় নাই।</p>
+                    <?php
+                }
+                ?>
+            </div>
+
         </div>
     </div>
 </section><!-- End Cta Section -->

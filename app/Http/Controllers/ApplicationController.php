@@ -32,53 +32,64 @@ class ApplicationController extends Controller {
 
     public function store(Request $request) {
         $Required = [
-            'category_name' => 'required|max:255',
-            'category_name_en' => 'max:255',
-            'category_order' => 'required|numeric',
-            'file' => 'image|mimes:jpg,jpeg,png,JPG,JPEG,PNG|max:1024',
+            'sector_id' => 'required',
+            'heading' => 'required|max:1000',
+            'details' => 'required',
+            'file.*' => 'mimes:jpg,jpeg,png,JPG,JPEG,PNG,pdf,PDF,mp4,mkv,doc,docx|max:20480',
             'display' => 'required',
         ];
 
 
         $Message = [
-            'category_name.required' => 'You must enter category name.',
-            'category_name.max' => 'Category name cannot be more than 255 character.',
-            'category_name_en.max' => 'Category name in English cannot be more than 255 character.',
-            'category_order.required' => 'You must enter category display order.',
-            'category_order.numeric' => 'Category display order must be number.',
-            'file.required' => 'You must enter category image.',
-            'file.file' => 'Category image file did not upload to server.',
-            'file.image' => 'Category image is not a valid image file.',
-            'file.mimes' => 'Category image file must be jpg,jpeg or png.',
-            'file.dimensions' => 'Category image must be 1200x675 px size.',
-            'file.max' => 'Category image cannot be more than 1024KB.',
-            'display.required' => 'You must select display status.',
+            'sector_id.required' => 'অবদানের ক্ষেত্র নির্বাচন করুন।',
+            'heading.required' => 'অবদানের শিরোনাম লিখুন।',
+            'heading.max' => 'অবদানের শিরোনাম সর্বোচ্চ ১০০০ অক্ষর হতে পারবে।',
+            'details.required' => 'অবদানের বিস্তারিত লিখুন।',
+            'file.*.mimes' => 'ভুল ফাইল নির্বাচন করেছেন। সমর্থিত ফাইল ফরম‌্যাট: jpg,jpeg,pngpdf,mp4,mkv,doc,docx',
+            'file.*.max' => 'ফাইল সর্বোচ্চ ২০ মেগাবাইট হতে পারবে।',
         ];
 
         $request->validate($Required, $Message);
 
-        $File = $Resized = null;
-
-        if ($request->hasFile('file')) {
-            $File = $request->file->store('public');
-            $Resized = $this->resizeImage($File);
+        $Data = \App\Application::where('sector_id', $request->sector_id)
+                ->where('user_id', auth()->id())
+                ->first();
+        if ($Data != null) {
+            return back()->with('error', 'আপনি ইতিমধ‌্যে এই ক্ষেত্রে আবেদন করেছেন। নতুন করে আর আবেদন এই ক্ষেত্রে আবেদন করতে পারবেন না।');
         }
 
-        $Data = new \App\Category();
-        $Data->category_name = $request->category_name;
-        $Data->category_name_en = $request->category_name_en;
-        $Data->category_order = $request->category_order;
-        $Data->category_image = $File;
-        $Data->category_image_resized = $Resized;
-        $Data->display = $request->display;
-        $Data->created_by = auth()->id();
-        $Data->updated_by = auth()->id();
+        $File = [];
+        foreach ($request->file as $File) {
+            if ($File->getSize()) {
+                $path = Storage::disk('s3')->put("attachments", $request->file, 'public');
+                $url = Storage::disk('s3')->url($path);
+                $File[] = $url;
+            }
+        }
+
+        $Link = [];
+
+        foreach ($request->link as $Link) {
+            if (!empty($Link)) {
+                $Link[] = $Link;
+            }
+        }
+
+
+
+        $Data = new \App\Application();
+        $Data->sector_id = $request->sector_id;
+        $Data->heading = $request->heading;
+        $Data->details = $request->details;
+        $Data->attachments = json_encode(['link' => $Link, 'file' => $File]);
+        $Data->status = 'Processing';
+        $Data->user_id = auth()->id();
 
         $Data->save();
 
         //$request->session()->flash('Category created successfully. Category name: ' . $request->category_name . " and display order:" . $request->category_order);
 
-        return response(['message' => "Category created successfully." . '<br/> Category name: ' . $request->category_name . " <br/> Display order: " . $request->category_order]);
+        return redirect(route('quiz_profile'))->with('success','আপনার আবেদন সফল ভাবে সংগৃহীত হয়েছে।');
     }
 
     public function edit(Request $request, $Category) {
