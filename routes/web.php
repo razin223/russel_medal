@@ -22,7 +22,7 @@ Route::get("/quiz/content_guest/{id}", function($id) {
 })->name('content_guest');
 
 
-Route::get("/registration", 'UserController@registration_view')->name('registration');
+Route::get("/registration", 'UserController@registration_landing_view')->name('registration');
 Route::post("/registration", 'UserController@registration');
 
 Route::get("/kha_group_registration", 'UserController@kha_group_registration_view')->name('kha_group_registration');
