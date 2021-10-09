@@ -86,7 +86,7 @@
 
         <div class="row">
             <div class="col-12 " style=" text-align: justify;">
-                
+
                 <h4 class="text-center">আবেদন করুন</h4>
 
                 <form action="{{route('apply')}}" method="post">
@@ -125,6 +125,10 @@
                             <input type="text" class="form-control" name="link[]" placeholder="লিংক" id="link"/><br/>
                             <input type="file" class="form-control" name="file[]" placeholder="ফাইল" id="file"/><br/>
                         </div>
+                    </div>
+                    <div class="form-group text-center">
+                        উপরে প্রদত্ত তথ‌্য এবং সংযুক্তি সমূহ আমার জানামতে সঠিক। পরবর্তীতে কোন ব‌্যত‌্যয় পরিলক্ষিত হলে এ বিষয়ে কর্তৃপক্ষের সিদ্ধান্ত চুড়ান্ত বলে গণ‌্য হবে এবং আমি কর্তৃপক্ষের সিদ্ধান্ত মেনে চলব। <br/><br/>
+                        <input type="submit" value="আবেদন সাবমিট করুন" class="btn btn-primary"/>
                     </div>
                 </form>
 
