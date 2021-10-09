@@ -91,7 +91,7 @@
                     @csrf
                     <div class="form-group">
                         <b>অবদানের ক্ষেত্র: </b>
-                        <select name="sector_id">
+                        <select name="sector_id" class="form-control">
                             <option></option>
                             <?php
                             $Data = \App\Sector::whereNotIn('id', function($query) {
@@ -113,6 +113,10 @@
                     </div>
                     <div class="form-group">
                         <b>কি কি অবদান রেখেছেন তার বিস্তারিত (১০০ শব্দের মধ‌্যে): </b>
+                        <textarea name="details" class="form-control" rows="5"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <b>প্রমানক (লিংক, প্রত‌্যয়ন পত্র, নিউজ লিংক, ইউটিউব লিংক, অডিও ভিডিও ফাইল ইত‌্যাদি, একাধিক দেওয়া যাবে) : </b>
                         <textarea name="details" class="form-control" rows="5"></textarea>
                     </div>
                 </form>
