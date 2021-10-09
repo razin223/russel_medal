@@ -219,6 +219,12 @@
                                 </div>
                             </div>
                             <div class="form-group row p-1">
+                                <label class="col-12"><span class="text-danger">*</span> স্থায়ী ঠিকানা: </label>
+                                <div class="col-12">
+                                    <input type="text" name="address" value="{{$Data->address}}" class="form-control" placeholder="আপনার পূর্ণ স্থায়ী ঠিকানা (বাড়ি নং, রোড নং, থানা, জেলা ইত‌্যাদি) লিখুন"/>
+                                </div>
+                            </div>
+                            <div class="form-group row p-1">
                                 <label class="col-12"><span class="text-danger">*</span> জন্ম তারিখ: </label>
                                 <div class="col-12">
                                     {{date("d-m-Y",strtotime($Data->date_of_birth))}} <span class="text-danger">&nbsp;&nbsp;&nbsp;(পরিবর্তন করা সম্ভব নয়)</span>
@@ -226,7 +232,7 @@
                             </div>
                             
                             <div class="form-group row p-1">
-                                <label class="col-12"> ছবি: </label>
+                                <label class="col-12"><span class="text-danger">*</span> ছবি: </label>
                                 <div class="col-12">
                                     <input type="file" name="file" value="" class="form-control" placeholder="আপনার ছবি দিন" accept="image/png, image/jpeg"/>
                                     <span class="text-info">ছবি অবশ‌্যই jpg/jpeg/png হতে হবে এবং 512KB এর নিচে হতে হবে।</span><br/>
