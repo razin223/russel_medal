@@ -410,7 +410,7 @@ class UserController extends Controller {
                 'group' => ($User->group == 'Ka') ? "ক" : "খ",
                 'from' => env("MAIL_FROM_ADDRESS"),
                 'from_name' => env("MAIL_FROM_NAME"),
-                'subject' => "শেখ রাসেল কুইজ ইমেইল ভেরিফিকেশন",
+                'subject' => "শেখ রাসেল পদক ইমেইল ভেরিফিকেশন",
                 'id' => $User->id,
                 "code" => $VerificationCode
             ];
