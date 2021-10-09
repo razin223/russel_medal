@@ -4,7 +4,7 @@
         <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>শেখ রাসেল কুইজ: @yield('title','মেসেজ')</title>
+        <title>শেখ রাসেল পদক: @yield('title','মেসেজ')</title>
         <!-- plugins:css -->
         <link rel="stylesheet" href="{{asset('admin/vendors/simple-line-icons/css/simple-line-icons.css')}}">
         <link rel="stylesheet" href="{{asset('admin/vendors/flag-icon-css/css/flag-icon.min.css')}}">
@@ -30,7 +30,7 @@
                                         <img src="{{asset('assets/img/russel-logo.jpeg')}}">
                                     </a>
                                 </div>
-                                <h4 class="text-center">শেখ রাসেল কুইজ</h4>
+                                <h4 class="text-center">শেখ রাসেল পদক</h4>
                                 <!--<h5 class="font-weight-light text-center">{{$message}}</h5>-->
                                 @csrf
                                 @include("template-admin.fixed-layout.message")

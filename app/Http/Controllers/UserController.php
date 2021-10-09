@@ -8,21 +8,15 @@ use Illuminate\Support\Facades\Storage;
 
 class UserController extends Controller {
 
-    private $DateCheck = "2021-10-11";
+    private $DateCheck = "2022-09-30";
 
     public function registration_landing_view() {
-        return view('quiz.about_us');
+        return view('register');
     }
 
-    public function ka_group_registration_view() {
-        return view('register_ka');
-    }
+    
 
-    public function kha_group_registration_view() {
-        return view('register_kha');
-    }
-
-    public function ka_group_registration(Request $request) {
+    public function registration(Request $request) {
         if (isset($request->agree)) {
 
             $Required = [
@@ -69,19 +63,16 @@ class UserController extends Controller {
 
             list($Year, $Month, $Day) = explode(",", $Age);
 
-            if ($Year >= 13) {
-                return redirect()->back()->with('error', 'আপনি এই গ্রুপের জন‌্য যোগ‌্য নন। আপনার বয়স এই গ্রুপের প্রযোজ্য বয়সের তুলনায় বেশি।')->withInput();
+            if ($Year > 18 || $Year < 8) {
+                return redirect()->back()->with('error', 'আপনি এই পদকের জন‌্য যোগ‌্য নন। পদকে আবেদনের জন‌্য বয়স ৮-১৮ বছর এর মধ‌্যে হতে হবে।')->withInput();
             }
-            if ($Year < 8) {
-                return redirect()->back()->with('error', 'আপনি এই গ্রুপের জন‌্য যোগ‌্য নন। আপনার বয়স এই গ্রুপের প্রযোজ্য বয়সের তুলনায় কম।')->withInput();
-            }
+           
 
 
             $User = new \App\User;
             $User->email = $request->email;
             $User->name = $request->name;
             $User->date_of_birth = $DateofBirth;
-            $User->group = "Ka";
             $User->password = bcrypt($request->password);
             $User->user_type = 'User';
             $User->status = 'Awaiting Verification';
@@ -100,7 +91,7 @@ class UserController extends Controller {
                         'to' => $request->email,
                         'from' => env("MAIL_FROM_ADDRESS"),
                         'from_name' => env("MAIL_FROM_NAME"),
-                        'subject' => "শেখ রাসেল কুইজ ইমেইল ভেরিফিকেশন",
+                        'subject' => "শেখ রাসেল পদক ইমেইল ভেরিফিকেশন",
                         'id' => $User->id,
                         "code" => $VerificationCode
                     ];

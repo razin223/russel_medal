@@ -3,7 +3,7 @@
 @section("og_content")
 <meta property="og:url"                content="{{url()->current()}}" />
 <meta property="og:type"               content="website" />
-<meta property="og:title"              content="শেখ রাসেল কুইজ" />
+<meta property="og:title"              content="শেখ রাসেল পদক" />
 <meta property="og:description"        content="" />
 <meta property="og:image"              content="{{asset('assets/img/russel-logo.jpeg')}}" />
 @endsection

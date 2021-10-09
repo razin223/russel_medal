@@ -4,7 +4,7 @@
         <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>শেখ রাসেল কুইজ: @yield('title','সাইন ইন')</title>
+        <title>শেখ রাসেল পদক: @yield('title','সাইন ইন')</title>
         <!-- plugins:css -->
         <link rel="stylesheet" href="{{asset('admin/vendors/simple-line-icons/css/simple-line-icons.css')}}">
         <link rel="stylesheet" href="{{asset('admin/vendors/flag-icon-css/css/flag-icon.min.css')}}">
@@ -30,7 +30,7 @@
                                         <img src="{{asset('assets/img/russel-logo.jpeg')}}">
                                     </a>
                                 </div>
-                                <h4 class="text-center">শেখ রাসেল কুইজ</h4>
+                                <h4 class="text-center">শেখ রাসেল পদক</h4>
                                 <h6 class="font-weight-light text-center">সাইন ইন করুন</h6>
                                 @include('new-admin.fixed-layout.message')
                                 <form class="pt-3" method="POST" action="<?php echo route('login') ?>">
@@ -57,7 +57,7 @@
 
                                         <a href="{{route('email_verify_resend')}}" class="auth-link text-black">পুনরায় ভেরিফিকেশন ইমেইল পাঠান</a>
                                     </div>
-                                    <div class="text-center mt-4 font-weight-light"> অ‌্যাকাউন্ট নেই? সাইন আপ করুন &rarr; <a href="{{route('ka_group_registration')}}" class="text-primary"> গ্রুপ ক</a> <a href="{{route('kha_group_registration')}}" class="text-primary"> গ্রুপ খ</a>
+                                    <div class="text-center mt-4 font-weight-light"> অ‌্যাকাউন্ট নেই? <a href="{{route('registration')}}" class="text-primary">সাইন আপ করুন </a> 
                                     </div>
                                     <div class="text-center mt-4 font-weight-light">
                                         <button type="button" onclick="window.location = 'https://sheikhrussel.gov.bd'" class="btn btn-block btn-warning auth-form-btn" style="background-color: #916226; border-radius: 10px">
@@ -110,7 +110,7 @@
         </script>
         <!-- endinject -->
 
-        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <!-- Global site tag (gtag.js) - Google Analytics 
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-QES6F5P7GW"></script>
         <script>
                                                     window.dataLayer = window.dataLayer || [];
@@ -120,6 +120,6 @@
                                                     gtag('js', new Date());
 
                                                     gtag('config', 'G-QES6F5P7GW');
-        </script>
+        </script>-->
     </body>
 </html>

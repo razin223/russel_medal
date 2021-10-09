@@ -4,7 +4,7 @@
         <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>শেখ রাসেল কুইজ: @yield('title','সাইন আপ')</title>
+        <title>শেখ রাসেল পদক: @yield('title','সাইন আপ')</title>
         <!-- plugins:css -->
         <link rel="stylesheet" href="{{asset('admin/vendors/simple-line-icons/css/simple-line-icons.css')}}">
         <link rel="stylesheet" href="{{asset('admin/vendors/flag-icon-css/css/flag-icon.min.css')}}">
@@ -45,12 +45,12 @@
                                         <img src="{{asset('assets/img/russel-logo.jpeg')}}">
                                     </a>
                                 </div>
-                                <h3 class="text-center">শেখ রাসেল কুইজ</h3>
-                                <h5 class=" text-center"> গ্রুপ ক রেজিস্ট্রেশন (৮-১২ বছর)</h5>
+                                <h3 class="text-center">শেখ রাসেল পদক</h3>
+                                <h5 class=" text-center"> রেজিস্ট্রেশন (৮-১৮ বছর)</h5>
                                 <?php
                                 if (time() < strtotime("2021-10-09 23:59:59+06:00")) {
                                     ?>
-                                    <form class="pt-3" method="post" action="<?php echo route('ka_group_registration') ?>">
+                                    <form class="pt-3" method="post" action="<?php echo route('registration') ?>">
                                         @csrf
                                         @include("template-admin.fixed-layout.message")
                                         <div class="form-group">
@@ -118,7 +118,7 @@
                                     }
                                     ?>
                                     <div class="text-center mt-4 font-weight-light"> অ‌্যাকাউন্ট আছে? <a href="<?php echo route('login') ?>" class="text-primary">সাইন ইন করুন</a></div>
-                                    <div class="text-center mt-4 font-weight-light"> অ‌্যাকাউন্ট নেই? সাইন আপ করুন &rarr; <a href="{{route('ka_group_registration')}}" class="text-primary"> গ্রুপ ক</a> <a href="{{route('kha_group_registration')}}" class="text-primary"> গ্রুপ খ</a>
+                                    
 
                                         <div class="text-center mt-4 font-weight-light">
                                             <button type="button" onclick="window.location = 'https://sheikhrussel.gov.bd'" class="btn btn-block btn-warning auth-form-btn" style="background-color: #916226; border-radius: 10px">
@@ -169,7 +169,7 @@
             </script>
             <!-- endinject -->
 
-            <!-- Global site tag (gtag.js) - Google Analytics -->
+            <!-- Global site tag (gtag.js) - Google Analytics 
             <script async src="https://www.googletagmanager.com/gtag/js?id=G-S40SWR6RJT"></script>
             <script>
                                                 window.dataLayer = window.dataLayer || [];
@@ -179,6 +179,6 @@
                                                 gtag('js', new Date());
 
                                                 gtag('config', 'G-QES6F5P7GW');
-            </script>
+            </script>-->
     </body>
 </html>

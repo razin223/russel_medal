@@ -107,8 +107,7 @@
                             ?>
 
                             <li><a href="{{route('login')}}">সাইন ইন</a></li>
-                            <li><a href="{{route('ka_group_registration')}}">রেজিস্ট্রেশন ক গ্রুপ</a></li>
-                            <li><a href="{{route('kha_group_registration')}}">রেজিস্ট্রেশন খ গ্রুপ</a></li>
+                            <li><a href="{{route('landing')}}">রেজিস্ট্রেশন</a></li>
 
                             <?php
                         } else {
@@ -245,15 +244,15 @@
         <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
 
         <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-S40SWR6RJT"></script>
+        <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-S40SWR6RJT"></script> -->
         <script>
-window.dataLayer = window.dataLayer || [];
-function gtag() {
-    dataLayer.push(arguments);
-}
-gtag('js', new Date());
-
-gtag('config', 'G-QES6F5P7GW');
+//window.dataLayer = window.dataLayer || [];
+//function gtag() {
+//    dataLayer.push(arguments);
+//}
+//gtag('js', new Date());
+//
+//gtag('config', 'G-QES6F5P7GW');
 
 
 $(document).ready(function () {
