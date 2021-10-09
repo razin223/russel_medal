@@ -422,7 +422,7 @@
                 </table>
             </div>
 
-            <div class="col-md-12">
+            <div class="col-12  col-md-8 offset-md-2 mt-2">
                 <h5 class="text-center">আবেদনসমূহ</h5>
                 <?php
                 $Applications = \App\Application::where('user_id', auth()->id())->get();
