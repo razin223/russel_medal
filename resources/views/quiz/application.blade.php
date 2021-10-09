@@ -68,8 +68,8 @@
             min-width: 196px;
         }
     }
-    
-    
+
+
     h5{
         color: #0067b2;
         font-weight: bold;
@@ -86,9 +86,27 @@
 
         <div class="row">
             <div class="col-12 " style=" text-align: justify;">
-                
+
                 <form action="{{route('apply')}}" method="post">
                     @csrf
+                    <div class="form-group">
+                        <b>অবদানের ক্ষেত্র: </b>
+                        <select name="sector_id">
+                            <option></option>
+                            <?php
+                            $Data = \App\Sector::whereNotIn('id', function($query) {
+                                        $query->select('sector_id')
+                                                ->from('applications')
+                                                ->where('user_id', auth()->id());
+                                    })->orderBy('sector_name', 'asc')->get();
+                            foreach ($Data as $value) {
+                                echo "<option value='{$value->id}'";
+                                echo (old('sector_id') == $value->id) ? "selected" : "";
+                                echo ">{$value->sector_name}</option>";
+                            }
+                            ?>
+                        </select>
+                    </div>
                     <div class="form-group">
                         <b>অবদানের শিরোনাম: </b>
                         <input type="text" name="heading" class="form-control" maxlength="255"/>
