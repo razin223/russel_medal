@@ -235,7 +235,7 @@
                                 <label class="col-12"><span class="text-danger">*</span> ছবি: </label>
                                 <div class="col-12">
                                     <input type="file" name="file" value="" class="form-control" placeholder="আপনার ছবি দিন" accept="image/png, image/jpeg"/>
-                                    <span class="text-info">ছবি অবশ‌্যই jpg/jpeg/png হতে হবে এবং 512KB এর নিচে হতে হবে।</span><br/>
+                                    <span class="text-info">ছবি অবশ‌্যই jpg/jpeg/png হতে হবে এবং 512KB এর নিচে হতে হবে। পাসপোর্ট সাইজ হতে হবে।</span><br/>
                                     <?php
                                     if (!empty($Data->picture)) {
                                         ?>

@@ -14,8 +14,6 @@ class UserController extends Controller {
         return view('register');
     }
 
-    
-
     public function registration(Request $request) {
         if (isset($request->agree)) {
 
@@ -66,7 +64,7 @@ class UserController extends Controller {
             if ($Year > 18 || $Year < 8) {
                 return redirect()->back()->with('error', 'আপনি এই পদকের জন‌্য যোগ‌্য নন। পদকে আবেদনের জন‌্য বয়স ৮-১৮ বছর এর মধ‌্যে হতে হবে।')->withInput();
             }
-           
+
 
 
             $User = new \App\User;
@@ -809,16 +807,19 @@ class UserController extends Controller {
 
         $Required = [
             'name' => 'required|max:255',
+            'class' => 'required',
+            'special_child' => 'required',
+            'gender' => 'required',
+            'father_name' => 'required|max:512',
+            'mother_name' => 'required|max:512',
+            'guardian_name' => 'required|max:512',
+            'guardian_mobile_no' => 'required|max:11|min:11',
+            'guardian_email' => 'email',
             'address' => 'required|max:255',
-            'country_id' => 'required',
             'division_id' => 'required',
             'district_id' => 'required',
-            'class' => 'required',
-            'school' => 'required|max:512',
-            //'date_of_birth' => 'required',
-            'gender' => 'required',
-            'nationality' => 'required',
-            'mobile_number' => 'required|max:20',
+            'permanent_address' => 'required|max:255',
+                //'date_of_birth' => 'required',
         ];
 
 
@@ -826,31 +827,48 @@ class UserController extends Controller {
         $Message = [
             'name.required' => 'আপনার নাম লিখুন।',
             'name.max' => 'নাম ২৫৫ অক্ষরের বেশি হতে পারবে না।',
-            'address.required' => 'আপনার ঠিকানা লিখুন।',
-            'address.max' => 'ঠিকানা ২৫৫ অক্ষরের বেশি হতে পারবে না।',
-            'country_id.required' => 'আপনার দেশ নির্বাচন করুন।',
-            'division_id.required' => 'আপনার বিভাগ/স্টেট নির্বাচন করুন।',
-            'district_id.required' => 'আপনার জেলা/শহর নির্বাচন করুন।',
             'class.required' => 'আপনার শ্রেণী নির্বাচন করুন।',
-            'school.required' => 'আপনার বিদ‌্যালয়ের নাম লিখুন।',
-            'school.max' => 'বিদ‌্যালয়ের নাম ৫১২ অক্ষরের বেশি হতে পারবে না।',
-            'date_of_birth.required' => 'আপনার জন্মতারিখ নির্বাচন করুন।',
+            'special_child.required' => "বিশেষ চাহিদা সম্পন্ন শিশু কিনা তা নির্বাচন করুন।",
             'gender.required' => 'আপনার লিঙ্গ নির্বাচন করুন।',
-            'nationality.required' => 'আপনার জাতীয়তা নির্বাচন করুন।',
-            'mobile_number.required' => 'আপনার মোবাইল নং লিখুন।',
-            'mobile_number.max' => 'মোবাইল নং ২০ অক্ষরের বেশি হতে পারবে না।',
+            'father_name.required' => 'আপনার পিতার নাম লিখুন।',
+            'father_name.max' => 'পিতার নাম ২৫৫ অক্ষরের বেশি হতে পারবে না।',
+            'mother_name.required' => 'আপনার মাতার নাম লিখুন।',
+            'mother_name.max' => 'মাতার নাম ২৫৫ অক্ষরের বেশি হতে পারবে না।',
+            'guardian_name.required' => 'আপনার অভিভাবকের নাম লিখুন।',
+            'guardian_name.max' => 'অভিভাবকের নাম ২৫৫ অক্ষরের বেশি হতে পারবে না।',
+            'guardian_mobile_no.required' => 'আপনার অভিভাবকের মোবাইল নম্বর লিখুন।',
+            'guardian_mobile_no.max' => 'অভিভাবকের মোবাইল নম্বর ১১ অক্ষরের বেশি হতে পারবে না।',
+            'guardian_mobile_no.min' => 'অভিভাবকের মোবাইল নম্বর ১১ অক্ষরের কম হতে পারবে না।',
+            'guardian_email.email' => 'অভিভাবকের সঠিক ইমেইল লিখুন।',
+            'address.required' => 'আপনার বর্তমান ঠিকানা লিখুন।',
+            'address.max' => 'বর্তমান ঠিকানা ২৫৫ অক্ষরের বেশি হতে পারবে না।',
+            'division_id.required' => 'আপনার বিভাগ নির্বাচন করুন।',
+            'district_id.required' => 'আপনার জেলা নির্বাচন করুন।',
+            'permanent_address.required' => 'আপনার স্থায়ী ঠিকানা লিখুন।',
+            'permanent_address.max' => 'স্থায়ী ঠিকানা ২৫৫ অক্ষরের বেশি হতে পারবে না।',
+            'date_of_birth.required' => 'আপনার জন্মতারিখ নির্বাচন করুন।',
         ];
 
-        if ($request->hasFile('file')) {
-            $Required['file'] = "image|mimes:jpg,jpeg,png,JPG,JPEG,PNG|max:512";
-            $Message['file.image'] = "সঠিক ফরমেটের ছবি নির্বাচন করুন।";
-            $Message['file.mimes'] = "ছবি অবশ‌্যই jpg/jpeg/png হতে হবে।";
-            $Message['file.max'] = "ছবি সর্বোচ্চ 512KB হতে পারবে।";
+        $User = \App\User::find(auth()->id());
+
+        if ($User->picture == null) {
+            $Required['file'] = "required|image|mimes:jpg,jpeg,png,JPG,JPEG,PNG|max:512";
+        } else {
+            if ($request->hasFile('file')) {
+                $Required['file'] = "image|mimes:jpg,jpeg,png,JPG,JPEG,PNG|max:512";
+            }
         }
+
+        $Message['file.required'] = "আপনার পাসপোর্ট সাইজের ছবি দিন।";
+        $Message['file.image'] = "সঠিক ফরমেটের ছবি নির্বাচন করুন।";
+        $Message['file.mimes'] = "ছবি অবশ‌্যই jpg/jpeg/png হতে হবে।";
+        $Message['file.max'] = "ছবি সর্বোচ্চ 512KB হতে পারবে।";
+
+
+
 
         $request->validate($Required, $Message);
 
-        $User = \App\User::find(auth()->id());
         $User->name = $request->name;
         $User->address = $request->address;
         $User->district_id = $request->district_id;
