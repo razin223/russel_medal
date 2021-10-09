@@ -161,9 +161,10 @@
                                 </div>
                             </div>
                             <div class="form-group row p-1">
-                                <label class="col-12"><span class="text-danger">*</span>অভিভাবকের মোবাইল নম্বর: </label>
+                                <label class="col-12"><span class="text-danger">*</span> অভিভাবকের মোবাইল নম্বর: </label>
                                 <div class="col-12">
                                     <input type="text" name="school" value="{{$Data->school}}" class="form-control" placeholder="আপনার অভিভাবকের মোবাইল নম্বর লিখুন"/>
+                                    <span class="text-info">(১১ ডিজিট মোবাইল নম্বর লিখুন)</span>
                                 </div>
                             </div>
                             <div class="form-group row p-1">
@@ -174,41 +175,26 @@
                             </div>
                             
                             <div class="form-group row p-1">
-                                <label class="col-12"><span class="text-danger">*</span> ঠিকানা: </label>
+                                <label class="col-12"><span class="text-danger">*</span> বর্তমান ঠিকানা: </label>
                                 <div class="col-12">
                                     <input type="text" name="address" value="{{$Data->address}}" class="form-control" placeholder="আপনার ঠিকানা (বাড়ি নং, রোড নং, থানা ইত‌্যাদি) লিখুন"/>
                                 </div>
                             </div>
-                            <div class="form-group row p-1">
-                                <label class="col-12"><span class="text-danger">*</span> দেশ: </label>
-                                <div class="col-12">
-                                    <select name="country_id" id="country_id" class="form-control">
-                                        <?php
-                                        foreach (\App\Country::orderBy('bn', 'asc')->get() as $value) {
-                                            echo "<option value='{$value->id}'";
-                                            echo ($CountryId == $value->id) ? "selected" : "";
-                                            echo ">{$value->bn}</option>";
-                                        }
-                                        ?>
-                                    </select>
-                                </div>
-                            </div>
+                           
 
                             <div class="form-group row p-1">
                                 <label class="col-12"><span class="text-danger">*</span> বিভাগ: </label>
                                 <div class="col-12">
                                     <select name="division_id" id="division_id" class="form-control">
-                                        <?php
-                                        if (!empty($CountryId)) {
-                                            ?>
+                                       
                                             <option value=""></option>
                                             <?php
-                                            foreach (\App\Division::where('country_id', $CountryId)->orderBy('bn', 'asc')->get() as $value) {
+                                            foreach (\App\Division::orderBy('bn', 'asc')->get() as $value) {
                                                 echo "<option value='{$value->id}'";
                                                 echo ($DivisionId == $value->id) ? "selected" : "";
                                                 echo ">{$value->bn}</option>";
                                             }
-                                        }
+                                        
                                         ?>
                                     </select>
                                 </div>
@@ -238,27 +224,7 @@
                                     {{date("d-m-Y",strtotime($Data->date_of_birth))}} <span class="text-danger">&nbsp;&nbsp;&nbsp;(পরিবর্তন করা সম্ভব নয়)</span>
                                 </div>
                             </div>
-                            <div class="form-group row p-1">
-                                <label class="col-12"><span class="text-danger">*</span> জাতীয়তা: </label>
-                                <div class="col-12">
-                                    <select name="nationality" class="form-control">
-                                        <<?php
-                                        foreach (\App\Country::orderBy('bn', 'asc')->get() as $value) {
-                                            echo "<option value='{$value->id}'";
-                                            echo ($Data->nationality == $value->id) ? "selected" : "";
-                                            echo ">{$value->nationality_bn}</option>";
-                                        }
-                                        ?>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="form-group row p-1">
-                                <label class="col-12"><span class="text-danger">*</span> মোবাইল নম্বর (যোগাযোগের জন‌্য): </label>
-                                <div class="col-12">
-                                    <input type="text" name="mobile_number" value="{{$Data->mobile_number}}" class="form-control" placeholder="আপনার মোবাইল নম্বর লিখুন"/>
-                                    <span class="text-info">মোবাইল নং ইংরেজিতে লিখুন</span>
-                                </div>
-                            </div>
+                            
                             <div class="form-group row p-1">
                                 <label class="col-12"> ছবি: </label>
                                 <div class="col-12">
