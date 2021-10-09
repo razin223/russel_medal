@@ -301,7 +301,7 @@
                 if ($Data->picture != null) {
                     ?>
                     <div class="text-center">
-                        <a href="" class="btn btn-info">আবেদন করুন</a>
+                        <a href="" class="btn btn-info">আবেদন করুন</a><br/><br/>
                     </div>
                     <?php
                 }
