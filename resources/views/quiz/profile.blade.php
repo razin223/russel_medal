@@ -131,7 +131,7 @@
                                     <select name="gender" class="form-control">
                                         <option value=""></option>
                                         <?php
-                                        $Gender = ['Male' => 'পুরুষ', 'Female' => 'মহিলা', 'Others' => 'অন‌্যান‌্য'];
+                                        $Gender = ['Male' => 'ছেলে', 'Female' => 'মেয়ে', 'Others' => 'অন‌্যান‌্য'];
                                         foreach ($Gender as $key => $value) {
                                             echo "<option value='{$key}'";
                                             echo ($Data->gender == $key) ? "selected" : "";
@@ -143,9 +143,33 @@
                             </div>
                             
                             <div class="form-group row p-1">
-                                <label class="col-12"><span class="text-danger">*</span> বিদ‌্যালয়ের নাম: </label>
+                                <label class="col-12"><span class="text-danger">*</span> পিতার নাম: </label>
                                 <div class="col-12">
-                                    <input type="text" name="school" value="{{$Data->school}}" class="form-control" placeholder="আপনার বিদ‌্যালয়ের নাম লিখুন"/>
+                                    <input type="text" name="school" value="{{$Data->school}}" class="form-control" placeholder="আপনার পিতার নাম লিখুন"/>
+                                </div>
+                            </div>
+                            <div class="form-group row p-1">
+                                <label class="col-12"><span class="text-danger">*</span> মাতার নাম: </label>
+                                <div class="col-12">
+                                    <input type="text" name="school" value="{{$Data->school}}" class="form-control" placeholder="আপনার মাতরা নাম লিখুন"/>
+                                </div>
+                            </div>
+                            <div class="form-group row p-1">
+                                <label class="col-12"><span class="text-danger">*</span> অভিভাবকের নাম: </label>
+                                <div class="col-12">
+                                    <input type="text" name="school" value="{{$Data->school}}" class="form-control" placeholder="আপনার অভিভাবকের নাম লিখুন"/>
+                                </div>
+                            </div>
+                            <div class="form-group row p-1">
+                                <label class="col-12"><span class="text-danger">*</span>অভিভাবকের মোবাইল নম্বর: </label>
+                                <div class="col-12">
+                                    <input type="text" name="school" value="{{$Data->school}}" class="form-control" placeholder="আপনার অভিভাবকের মোবাইল নম্বর লিখুন"/>
+                                </div>
+                            </div>
+                            <div class="form-group row p-1">
+                                <label class="col-12"> অভিভাবকের ইমেইল ঠিকানা: </label>
+                                <div class="col-12">
+                                    <input type="text" name="school" value="{{$Data->school}}" class="form-control" placeholder="আপনার অভিভাবকের ইমেইল ঠিকানা লিখুন"/>
                                 </div>
                             </div>
                             
