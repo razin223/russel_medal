@@ -42,7 +42,7 @@
                             <div class="auth-form-light text-left p-5">
                                 <div class="brand-logo text-center">
                                     <a href="{{route('landing')}}">
-                                        <img src="{{asset('assets/img/russel-logo.jpeg')}}">
+                                        <img src="{{asset('Final Tagline-01.png')}}">
                                     </a>
                                 </div>
                                 <h3 class="text-center">শেখ রাসেল পদক</h3>
