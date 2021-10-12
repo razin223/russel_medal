@@ -118,7 +118,7 @@
                         <textarea name="details" class="form-control" rows="5">{{old('details')}}</textarea>
                     </div>
                     <div class="form-group">
-                        <b>প্রমানক (লিংক, প্রত‌্যয়ন পত্র, নিউজ লিংক, ইউটিউব লিংক, অডিও ভিডিও ফাইল ইত‌্যাদি, একাধিক দেওয়া যাবে, ফাইল সর্বোচ্চ ২০ মেগাবাইট হতে পারবে।) : </b><br/>
+                        <b>প্রমানক (লিংক, প্রত‌্যয়ন পত্র, নিউজ লিংক, ইউটিউব লিংক, অডিও ভিডিও ফাইল ইত‌্যাদি, একাধিক দেওয়া যাবে, <span class="text-danger">ফাইল সর্বোচ্চ ২০ মেগাবাইট হতে পারবে।</span>) : </b><br/>
                         <a href="javascript:;" id="add_link"><i class="icofont-plus-circle"></i> লিংক যোগ করুন</a> &nbsp;
                         <a href="javascript:;" id="add_file"><i class="icofont-ui-file"></i> ফাইল যোগ করুন</a>
                         <div id="file_zone">
