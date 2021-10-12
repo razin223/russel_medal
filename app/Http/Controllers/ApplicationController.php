@@ -45,7 +45,7 @@ class ApplicationController extends Controller {
             'heading.required' => 'অবদানের শিরোনাম লিখুন।',
             'heading.max' => 'অবদানের শিরোনাম সর্বোচ্চ ১০০০ অক্ষর হতে পারবে।',
             'details.required' => 'অবদানের বিস্তারিত লিখুন।',
-            'file.*.mimes' => 'ভুল ফাইল নির্বাচন করেছেন। সমর্থিত ফাইল ফরম‌্যাট: jpg,jpeg,pngpdf,mp4,mkv,doc,docx',
+            'file.*.mimes' => 'ভুল ফাইল নির্বাচন করেছেন। সমর্থিত ফাইল ফরম‌্যাট: jpg,jpeg,png,pdf,mp4,mkv,doc,docx',
             'file.*.max' => 'ফাইল সর্বোচ্চ ২০ মেগাবাইট হতে পারবে।',
         ];
 
