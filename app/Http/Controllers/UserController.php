@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Storage;
 
 class UserController extends Controller {
 
-    private $DateCheck = "2022-09-30";
+    private $DateCheck = "2021-10-14";
 
     public function registration_landing_view() {
         return view('register');
