@@ -300,11 +300,14 @@
                 $Data = \App\User::find(auth()->id());
 
                 if ($Data->picture != null) {
-                    ?>
-                    <div class="text-center">
-                        <a href="{{route('apply')}}" class="btn btn-info">আবেদন করুন</a><br/><br/>
-                    </div>
-                    <?php
+
+                    if (time() < strtotime('2021-10-15 00:00:00+06:00')) {
+                        ?>
+                        <div class="text-center">
+                            <a href="{{route('apply')}}" class="btn btn-info">আবেদন করুন</a><br/><br/>
+                        </div>
+                        <?php
+                    }
                 }
                 ?>
                 <table class="table" style="border: solid lightgray 1px">
