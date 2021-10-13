@@ -168,32 +168,32 @@
                     <a href="#" class="nav-link">
                         <i class="nav-icon far fa-plus-square"></i>
                         <p>
-                            Question
+                            Application
                             <i class="fas fa-angle-left right"></i>
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
-                        <li class="nav-item">
+<!--                        <li class="nav-item">
                             <a href="{{route('Question.create')}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Create</p>
                             </a>
-                        </li>
-                        <li class="nav-item">
+                        </li>-->
+<!--                        <li class="nav-item">
                             <a href="{{route('Question.upload')}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Upload</p>
                             </a>
-                        </li>
+                        </li>-->
                         <li class="nav-item">
-                            <a href="{{route('Question.index')}}" class="nav-link">
+                            <a href="{{route('Application.index')}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>List</p>
                             </a>
                         </li>
                     </ul>
                 </li>
-
+ <!--   
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
                         <i class="nav-icon far fa-plus-square"></i>
@@ -203,12 +203,12 @@
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
-                        <!--                        <li class="nav-item">
+                                            <li class="nav-item">
                                                     <a href="{{route('Question.create')}}" class="nav-link">
                                                         <i class="far fa-circle nav-icon"></i>
                                                         <p>Create</p>
                                                     </a>
-                                                </li>-->
+                                                </li>
                         <li class="nav-item">
                             <a href="{{route('Exam.index')}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
@@ -216,7 +216,7 @@
                             </a>
                         </li>
                     </ul>
-                </li>
+                </li>-->
                 <?php
                 if (auth()->user()->user_type == 'Admin') {
                     ?>
