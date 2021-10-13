@@ -42,9 +42,9 @@
         <div class="row p-2 bg-green">
             <h5 class="w-100 border-bottom border-white">Applicant</h5>
             <?php
-            $User = \App\Application::groupBy('user_id')->select('user_id')->get()->count();
+            $User = \App\Application::groupBy('user_id')->select('user_id')->get();
             ?>
-            <h6>{{$User}}</h6>
+            <h6>{{$User->count()}}</h6>
         </div>
     </div>
 
