@@ -25,7 +25,7 @@
             <h6>{{$User}}</h6>
         </div>
     </div>
-    
+
     <div class="col-md-2 mr-2 mt-2">
         <div class="row p-2 bg-indigo  ">
             <h5 class="w-100 border-bottom border-white">Email Verified</h5>
@@ -42,7 +42,7 @@
         <div class="row p-2 bg-green">
             <h5 class="w-100 border-bottom border-white">Applicant</h5>
             <?php
-            $User = \App\Application::groupBy('user_ids')->count();
+            $User = \App\Application::groupBy('user_id')->count();
             ?>
             <h6>{{$User}}</h6>
         </div>
