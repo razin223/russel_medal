@@ -25,30 +25,10 @@
             <h6>{{$User}}</h6>
         </div>
     </div>
-
+    
     <div class="col-md-2 mr-2 mt-2">
-        <div class="row p-2 bg-purple">
-            <h5 class="w-100 border-bottom border-white">Registered (Ka)</h5>
-            <?php
-            $User = \App\User::where('user_type', 'User')->where('group', 'Ka')->count();
-            ?>
-            <h6>{{$User}}</h6>
-        </div>
-    </div>
-
-    <div class="col-md-2 mr-2 mt-2">
-        <div class="row p-2 bg-green">
-            <h5 class="w-100 border-bottom border-white">Registered (Kha)</h5>
-            <?php
-            $User = \App\User::where('user_type', 'User')->where('group', 'Kha')->count();
-            ?>
-            <h6>{{$User}}</h6>
-        </div>
-    </div>
-
-    <div class="col-md-2 mr-2 mt-2">
-        <div class="row p-2 bg-warning ">
-            <h5 class="w-100 border-bottom border-white">Email Verified (Total)</h5>
+        <div class="row p-2 bg-indigo  ">
+            <h5 class="w-100 border-bottom border-white">Email Verified</h5>
             <?php
             $User = \App\User::where('user_type', 'User')->whereNotNull('email_verified_at')->count();
             ?>
@@ -56,56 +36,27 @@
         </div>
     </div>
 
+
+
     <div class="col-md-2 mr-2 mt-2">
-        <div class="row p-2 bg-indigo  ">
-            <h5 class="w-100 border-bottom border-white">Email Verified (Ka)</h5>
+        <div class="row p-2 bg-green">
+            <h5 class="w-100 border-bottom border-white">Applicant</h5>
             <?php
-            $User = \App\User::where('user_type', 'User')->where('group', 'Ka')->whereNotNull('email_verified_at')->count();
+            $User = \App\Application::groupBy('user_id')->count();
             ?>
             <h6>{{$User}}</h6>
         </div>
     </div>
 
     <div class="col-md-2 mr-2 mt-2">
-        <div class="row p-2 bg-olive disabled  ">
-            <h5 class="w-100 border-bottom border-white">Email Verified (Kha)</h5>
+        <div class="row p-2 bg-warning ">
+            <h5 class="w-100 border-bottom border-white">Application (Total)</h5>
             <?php
-            $User = \App\User::where('user_type', 'User')->where('group', 'Kha')->whereNotNull('email_verified_at')->count();
+            $User = \App\Application::count();
             ?>
             <h6>{{$User}}</h6>
         </div>
     </div>
-
-    <div class="col-md-2 mr-2 mt-2">
-        <div class="row p-2 bg-primary">
-            <h5 class="w-100 border-bottom border-white">Profile Updated (Total)</h5>
-            <?php
-            $User = \App\User::where('user_type', 'User')->whereNotNull('class')->count();
-            ?>
-            <h6>{{$User}}</h6>
-        </div>
-    </div>
-
-    <!-- <div class="col-md-2 mr-2 mt-2">
-        <div class="row p-2 bg-success">
-            <h5 class="w-100 border-bottom border-white">Practice Exam Taken</h5>
-    <?php
-    $User = \App\TemporaryExam::count();
-    ?>
-            <h6>{{$User}}</h6>
-        </div>
-    </div> -->
-
-    <div class="col-md-2 mr-2 mt-2">
-        <div class="row p-2 bg-dark">
-            <h5 class="w-100 border-bottom border-white">Exam Taken (Total)</h5>
-            <?php
-            $User = \App\Exam::count();
-            ?>
-            <h6>{{$User}}</h6>
-        </div>
-    </div>
-
 
 
 </div>
