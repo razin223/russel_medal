@@ -16,7 +16,7 @@ class ApplicationController extends Controller {
 
     public function list(Request $request) {
         $Data = \App\Application::with('getSector', 'getUser')->paginate(100);
-        return view('Application.index', ['SearchData' => $Data]);
+        return view('new-admin.Application.index', ['SearchData' => $Data]);
     }
 
     public function individual(Request $request, $id) {
