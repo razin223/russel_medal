@@ -9,10 +9,11 @@
                     <tr>
                         <th>&nbsp;</th>
                         <th>#</th>
-                        <th>Image</th>
-                        <th>Category</th>
-                        <th>Serial</th>
-                        <th>Display</th>
+                        <th>Sector</th>
+                        <th>Name</th>
+                        <th>Heading</th>
+                        <th>Details</th>
+                        <th>Attachments</th>
                         <th>Modification</th>
                     </tr>
                 </thead>
@@ -24,19 +25,17 @@
                         ?>
                         <tr>
                             <td>
-                                <a href="{{route('photo_edit',['id'=>$Data->id])}}"><i class="fas fa-pencil-alt"></i></a>&nbsp; &nbsp;
-                                
-                                <a onclick="return confirm('Do you really want to delete this photo?')" href="{{route('photo_delete',['id'=>$Data->id])}}" class="text-danger"><i class="fas fa-times"></i></a>
+                                <a href="{{route('Application.individual',['id'=>$Data->id])}}"><i class="fas fa-eye"></i></a>&nbsp; &nbsp;
+                                <a href="{{route('Application.individualprint',['id'=>$Data->id])}}"><i class="fas fa-print"></i></a>
                             </td>
                             <td>{{$Sl}}</td>
                             <td>
-                                <img src="{{asset('photo_gallery/'.$Data->file)}}" style="width: 200px;border: solid lightgray 1px" class="img-fluid">
+                                {{$Data->getSector->sector_name}}
                             </td>
-                            <td>{{$Data->getPhotoCategory->photo_category_name}}</td>
-                            <td>{{$Data->serial}}</td>
-                            <td>{!!($Data->display == 'Yes')? "<h3 class='text-success'>".$Data->display."</h3>":"<h3 class='text-danger'>".$Data->display."</h3>" !!}</td>
+                            <td>{{$Data->getUser->name}}</td>
+                            <td>{{$Data->heading}}</td>
+                            <td>{$Data->details}</td>
                             <td>
-                                {{$Data->getUser->first_name}} {{$Data->getUser->last_name}}<br/>
                                 Created: {{date("d-M-Y h:i:sA",strtotime($Data->created_at))}}<br/>
                                 Updated: {{date("d-M-Y h:i:sA",strtotime($Data->updated_at))}}<br/>
                             </td>
