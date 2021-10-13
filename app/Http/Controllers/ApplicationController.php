@@ -14,6 +14,15 @@ class ApplicationController extends Controller {
         $this->middleware('auth');
     }
 
+    public function list(Request $request) {
+        $Data = \App\Application::with('getSector', 'getUser')->paginate(100);
+        return view('Application.index', ['SearchData' => $Data]);
+    }
+
+    public function individual(Request $request, $id) {
+        
+    }
+
     public function index(Request $request) {
 
 
@@ -22,12 +31,12 @@ class ApplicationController extends Controller {
         if ($Data->picture == null) {
             return redirect(route('quiz_profile'))->with('error', 'আপনার প্রোফাইল আপডেট করুন। তারপর আবেদন করতে পারবেন।');
         }
-        
-        if(time() < strtotime('2021-10-15 00:00:00+06:00')){
 
-        return view('quiz.application');
-        }else{
-           return redirect(route('quiz_profile'))->with('error', 'আবেদনের সময় শেষ।');
+        if (time() < strtotime('2021-10-15 00:00:00+06:00')) {
+
+            return view('quiz.application');
+        } else {
+            return redirect(route('quiz_profile'))->with('error', 'আবেদনের সময় শেষ।');
         }
     }
 

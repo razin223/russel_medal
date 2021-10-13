@@ -34,8 +34,8 @@ Route::get("/district_get", 'UserController@district_get')->name('district_get')
 Route::post("/profile_update", 'UserController@profile_update')->name('profile_update');
 Route::post("/profile_password_update", 'UserController@profile_password_update')->name('profile_password_update');
 
-Route::get("/apply",'ApplicationController@index')->name('apply');
-Route::post("/apply",'ApplicationController@store');
+Route::get("/apply", 'ApplicationController@index')->name('apply');
+Route::post("/apply", 'ApplicationController@store');
 
 
 
@@ -122,6 +122,8 @@ Route::resource("Photo", 'PhotoController');
 Route::resource("Video", 'VideoController');
 Route::resource("Exam", 'ExamController');
 Route::get("/Application/index", 'ApplicationController@list')->name('Application.index');
+Route::get("/Application/individual/{id}", 'ApplicationController@individual')->name('Application.individual');
+Route::get("/Application/individualprint/{id}", 'ApplicationController@print')->name('Application.individualprint');
 Route::get("/ExamView/{id}", 'ExamController@ExamView')->name('Exam.View');
 Route::post("/Photo_mass_update", 'PhotoController@mass_update')->name('Photo.mass_update');
 
