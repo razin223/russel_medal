@@ -121,6 +121,7 @@ Route::resource("SubCategory", 'SubCategoryController');
 Route::resource("Photo", 'PhotoController');
 Route::resource("Video", 'VideoController');
 Route::resource("Exam", 'ExamController');
+Route::get("/Application/index", 'ApplicationController@list')->('Application.index');
 Route::get("/ExamView/{id}", 'ExamController@ExamView')->name('Exam.View');
 Route::post("/Photo_mass_update", 'PhotoController@mass_update')->name('Photo.mass_update');
 
