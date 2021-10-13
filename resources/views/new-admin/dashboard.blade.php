@@ -43,6 +43,7 @@
             <h5 class="w-100 border-bottom border-white">Applicant</h5>
             <?php
             $User = \App\Application::groupBy('user_id')->select('user_id')->get();
+            dd($User);
             ?>
             <h6>{{$User->count()}}</h6>
         </div>
