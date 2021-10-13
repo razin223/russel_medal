@@ -35,7 +35,25 @@
                             <td>{{$Data->getUser->name}}</td>
                             <td>{{$Data->heading}}</td>
                             <td>{{$Data->details}}</td>
-                            <td></td>
+                            <td>
+                                <?php
+                                $Array = json_decode($Data->attachments, true);
+                                if (count($Array['link'])) {
+                                    foreach ($Array['link'] as $key => $value) {
+                                        ?>
+                                        <a href="{{$value}}" target="_blank">Link {{$key+1}}</a>
+                                        <?php
+                                    }
+                                }
+                                if (count($Array['file'])) {
+                                    foreach ($Array['file'] as $key => $value) {
+                                        ?>
+                                        <a href="{{$value}}" target="_blank">File {{$key+1}}</a>
+                                        <?php
+                                    }
+                                }
+                                ?>
+                            </td>
                             <td>
                                 Created: {{date("d-M-Y h:i:sA",strtotime($Data->created_at))}}<br/>
                                 Updated: {{date("d-M-Y h:i:sA",strtotime($Data->updated_at))}}<br/>
