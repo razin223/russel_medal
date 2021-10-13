@@ -35,6 +35,7 @@
                             <td>{{$Data->getUser->name}}</td>
                             <td>{{$Data->heading}}</td>
                             <td>{{$Data->details}}</td>
+                            <td></td>
                             <td>
                                 Created: {{date("d-M-Y h:i:sA",strtotime($Data->created_at))}}<br/>
                                 Updated: {{date("d-M-Y h:i:sA",strtotime($Data->updated_at))}}<br/>
