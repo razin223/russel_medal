@@ -11,7 +11,7 @@
             }
         </style>
     </head>
-    <body>
+    <body style="width: 8.3in">
         <?php
         $Data = \App\Application::find($id);
         $User = $Data->getUser;
