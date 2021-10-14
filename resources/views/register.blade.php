@@ -114,7 +114,7 @@
                                     <?php
                                 } else {
                                     ?>
-                                    <h5 class="text-center text-danger">রেজিস্ট্রেশনের সময় শেষ।</h4>
+                                    <h4 class="text-center text-danger">রেজিস্ট্রেশনের সময় শেষ।</h4>
                                         <?php
                                     }
                                     ?>
