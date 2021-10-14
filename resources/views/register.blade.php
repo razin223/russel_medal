@@ -49,7 +49,7 @@
                                 <h5 class=" text-center"> রেজিস্ট্রেশন (৮-১৮ বছর)</h5>
                                 <h5 class="text-danger text-center">আবেদনের শেষ তারিখ ১৪ই অক্টোবর ২০২১</h5>
                                 <?php
-                                if (time() < strtotime("2022-10-09 23:59:59+06:00")) {
+                                if (time() < strtotime("2021-10-14 23:59:59+06:00")) {
                                     ?>
                                     <form class="pt-3" method="post" action="<?php echo route('registration') ?>">
                                         @csrf
