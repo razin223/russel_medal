@@ -22,50 +22,78 @@
                         <td>{{date("d-m-Y",strtotime($User->date_of_birth))}}</td>
                         <td style="width: 150px">Gender: </td>
                         <td>{{$User->gender}}</td>
+                    <tr/>
+                    <tr>
+                        <td style="width: 150px">Class: </td>
+                        <td>{{$User->class}}</td>
+                        <td style="width: 150px">Special Child: </td>
+                        <td>{{$User->special_child}}</td>
                     </tr>
                     <tr>
                         <td>Email: </td>
-                        <td>{{$User->email}}</td>
+                        <td colspan="3">{{$User->email}}</td>
                     </tr>
                     <tr>
                         <td>Father: </td>
-                        <td>{{$User->father_name}}</td>
+                        <td  colspan="3">{{$User->father_name}}</td>
                     </tr>
                     <tr>
                         <td>Mother: </td>
-                        <td>{{$User->mother_name}}</td>
+                        <td  colspan="3">{{$User->mother_name}}</td>
                     </tr>
                     <tr>
                         <td>Guardian: </td>
-                        <td>{{$User->guardian_name}}</td>
+                        <td  colspan="3">{{$User->guardian_name}}</td>
                     </tr>
                     <tr>
                         <td>Guardian Mobile: </td>
                         <td>{{$User->guardian_mobile_no}}</td>
-                    </tr>
-                    <tr>
                         <td>Guardian Email: </td>
                         <td>{{$User->guardian_email}}</td>
                     </tr>
+
                     <tr>
                         <td>Present Address: </td>
-                        <td>{{$User->address}}, District: {{$User->getDistrict->name}}, Division: {{$User->getDistrict->getDivision->name}}</td>
+                        <td  colspan="3">{{$User->address}}, District: {{$User->getDistrict->name}}, Division: {{$User->getDistrict->getDivision->name}}</td>
                     </tr>
                     <tr>
                         <td>Permanent Address: </td>
-                        <td>{{$User->permanent_address}}</td>
+                        <td  colspan="3">{{$User->permanent_address}}</td>
                     </tr>
                     <tr>
-                        <td>Guardian Email: </td>
-                        <td>{{$User->guardian_email}}</td>
+                        <td colspan="4">
+                            <h4 class="text-center">Application</h4>
+                        </td>
                     </tr>
                     <tr>
-                        <td>Guardian Email: </td>
-                        <td>{{$User->guardian_email}}</td>
+                        <td>Contribution: </td>
+                        <td  colspan="3">{{$Data->heading}}</td>
                     </tr>
                     <tr>
-                        <td>Guardian Email: </td>
-                        <td>{{$User->guardian_email}}</td>
+                        <td>Contribution Details: </td>
+                        <td  colspan="3">{{$User->details}}</td>
+                    </tr>
+                    <tr>
+                        <td>Attachments: </td>
+                        <td colspan="3">
+                            <?php
+                            $Array = json_decode($Data->attachments, true);
+                            if (count($Array['link'])) {
+                                foreach ($Array['link'] as $key => $value) {
+                                    ?>
+                                    <a href="{{$value}}" target="_blank">Link {{$key+1}}</a><br/>
+                                    <?php
+                                }
+                            }
+                            if (count($Array['file'])) {
+                                foreach ($Array['file'] as $key => $value) {
+                                    ?>
+                                    <a href="{{$value}}" target="_blank">File {{$key+1}}</a><br/>
+                                    <?php
+                                }
+                            }
+                            ?>
+                        </td>
                     </tr>
                 </tbody>
             </table>
