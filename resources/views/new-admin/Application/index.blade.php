@@ -47,7 +47,7 @@
                         ?>
                         <tr>
                             <td>
-                                <a href="{{route('Application.individual',['id'=>$Data->id])}}"><i class="fas fa-eye"></i></a>&nbsp; &nbsp;
+                                <a href="{{route('Application.individual',['id'=>$Data->id])}}" target="_blank"><i class="fas fa-eye"></i></a>&nbsp; &nbsp;
                                 <a href="{{route('Application.individualprint',['id'=>$Data->id])}}"><i class="fas fa-print"></i></a>
                             </td>
                             <td>{{$Sl}}</td>
