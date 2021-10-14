@@ -15,7 +15,10 @@
                 <tbody>
                     <tr>
                         <td style="width: 150px">Name: </td>
-                        <td>{{$User->name}}</td>
+                        <td colspan="2">{{$User->name}}</td>
+                        <td>
+                            <img src="{{$User->picture}}" style="max-width: 100px; max-height: 100px; float: right"/>
+                        </td>
                     </tr>
                     <tr>
                         <td>Date of Birth: </td>
