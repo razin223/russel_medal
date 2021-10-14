@@ -9,7 +9,7 @@
         $Sector = $Data->getSector;
         $DateCheck = "2021-10-14";
 
-        $Age = \Carbon\Carbon::parse($User->date_of_birth)->diff(\Carbon\Carbon::parse($DateCheck))->format('%y year, %m month, %d days');
+        $Age = \Carbon\Carbon::parse($User->date_of_birth)->diff(\Carbon\Carbon::parse($DateCheck))->format('%y year, %m month, %d day');
 
         if ($Data != null) {
             ?>
@@ -26,7 +26,7 @@
 
                     <tr>
                         <td>Date of Birth: </td>
-                        <td style="width: 250px">{{date("d-m-Y",strtotime($User->date_of_birth))}} ({{$Age}} till 14-10-2021)</td>
+                        <td style="width: 250px">{{date("d-m-Y",strtotime($User->date_of_birth))}}<br/> ({{$Age}} till 14-10-2021)</td>
                         <td style="width: 150px">Gender: </td>
                         <td>{{$User->gender}}</td>
                     <tr/>
