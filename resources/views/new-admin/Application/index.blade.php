@@ -48,7 +48,7 @@
                         <tr>
                             <td>
                                 <a href="{{route('Application.individual',['id'=>$Data->id])}}" target="_blank"><i class="fas fa-eye"></i></a>&nbsp; &nbsp;
-                                <a href="{{route('Application.individualprint',['id'=>$Data->id])}}"><i class="fas fa-print"></i></a>
+                                <a href="{{route('Application.individualprint',['id'=>$Data->id])}}" target="_blank"><i class="fas fa-print"></i></a>
                             </td>
                             <td>{{$Sl}}</td>
                             <td>
@@ -60,7 +60,6 @@
                             <td>
                                 <?php
                                 $Array = json_decode($Data->attachments, true);
-                                dd($Array);
                                 if (count($Array['link'])) {
                                     foreach ($Array['link'] as $key => $value) {
                                         ?>
