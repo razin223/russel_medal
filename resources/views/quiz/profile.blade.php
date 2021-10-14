@@ -301,7 +301,7 @@
 
                 if ($Data->picture != null) {
 
-                    if (time() < strtotime('2021-10-16 00:00:00+06:00')) {
+                    if (time() < strtotime('2021-10-15 00:00:00+06:00')) {
                         ?>
                         <div class="text-center">
                             <a href="{{route('apply')}}" class="btn btn-info">আবেদন করুন</a><br/><br/>
