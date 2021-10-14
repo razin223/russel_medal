@@ -60,6 +60,7 @@
                             <td>
                                 <?php
                                 $Array = json_decode($Data->attachments, true);
+                                dd($Array);
                                 if (count($Array['link'])) {
                                     foreach ($Array['link'] as $key => $value) {
                                         ?>
