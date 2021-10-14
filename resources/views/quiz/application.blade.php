@@ -89,50 +89,60 @@
 
                 <h4 class="text-center">আবেদন করুন</h4>
                 @include("template-admin.fixed-layout.message")
-                <form action="{{route('apply')}}" method="post" enctype="multipart/form-data">
-                    @csrf
-                    <div class="form-group">
-                        <b>অবদানের ক্ষেত্র: </b>
-                        <select name="sector_id" class="form-control">
-                            <option></option>
-                            <?php
-                            $Data = \App\Sector::whereNotIn('id', function($query) {
-                                        $query->select('sector_id')
-                                                ->from('applications')
-                                                ->where('user_id', auth()->id());
-                                    })->orderBy('sector_name', 'asc')->get();
-                            foreach ($Data as $value) {
-                                echo "<option value='{$value->id}'";
-                                echo (old('sector_id') == $value->id) ? "selected" : "";
-                                echo ">{$value->sector_name}</option>";
-                            }
-                            ?>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <b>অবদানের শিরোনাম: </b>
-                        <input type="text" name="heading" class="form-control" value="{{old('heading')}}" maxlength="255"/>
-                    </div>
-                    <div class="form-group">
-                        <b>কি কি অবদান রেখেছেন তার বিস্তারিত (১০০ শব্দের মধ‌্যে): </b>
-                        <textarea name="details" class="form-control" rows="5">{{old('details')}}</textarea>
-                    </div>
-                    <div class="form-group">
-                        <b>প্রমানক (লিংক, প্রত‌্যয়ন পত্র, নিউজ লিংক, ইউটিউব লিংক, অডিও ভিডিও ফাইল ইত‌্যাদি, একাধিক দেওয়া যাবে, <span class="text-danger">ফাইল সর্বোচ্চ ২০ মেগাবাইট হতে পারবে।</span>) : </b><br/>
-                        <a href="javascript:;" id="add_link"><i class="icofont-plus-circle"></i> লিংক যোগ করুন</a> &nbsp;
-                        <a href="javascript:;" id="add_file"><i class="icofont-ui-file"></i> ফাইল যোগ করুন</a>
-                        <div id="file_zone">
-                          
-                            <input type="text" class="form-control" name="link[]" placeholder="লিংক" id="link"/><br/>
-                            <input type="file" class="form-control" name="file[]" placeholder="ফাইল" id="file"/><br/>
-                        </div>
-                    </div>
-                    <div class="form-group text-center">
-                        <p class="text-justify">উপরে প্রদত্ত তথ‌্য এবং সংযুক্তি সমূহ আমার জানামতে সঠিক। পরবর্তীতে কোন ব‌্যত‌্যয় পরিলক্ষিত হলে এ বিষয়ে কর্তৃপক্ষের সিদ্ধান্ত চুড়ান্ত বলে গণ‌্য হবে এবং আমি কর্তৃপক্ষের সিদ্ধান্ত মেনে চলব।</p> <br/><br/>
-                        <input type="submit" value="আবেদন সাবমিট করুন" class="btn btn-primary"/>
-                    </div>
-                </form>
 
+                <?php
+                if (time() < strtotime("2021-10-14 23:59:59+06:00")) {
+                    ?>
+                    <form action="{{route('apply')}}" method="post" enctype="multipart/form-data">
+                        @csrf
+                        <div class="form-group">
+                            <b>অবদানের ক্ষেত্র: </b>
+                            <select name="sector_id" class="form-control">
+                                <option></option>
+                                <?php
+                                $Data = \App\Sector::whereNotIn('id', function($query) {
+                                            $query->select('sector_id')
+                                                    ->from('applications')
+                                                    ->where('user_id', auth()->id());
+                                        })->orderBy('sector_name', 'asc')->get();
+                                foreach ($Data as $value) {
+                                    echo "<option value='{$value->id}'";
+                                    echo (old('sector_id') == $value->id) ? "selected" : "";
+                                    echo ">{$value->sector_name}</option>";
+                                }
+                                ?>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <b>অবদানের শিরোনাম: </b>
+                            <input type="text" name="heading" class="form-control" value="{{old('heading')}}" maxlength="255"/>
+                        </div>
+                        <div class="form-group">
+                            <b>কি কি অবদান রেখেছেন তার বিস্তারিত (১০০ শব্দের মধ‌্যে): </b>
+                            <textarea name="details" class="form-control" rows="5">{{old('details')}}</textarea>
+                        </div>
+                        <div class="form-group">
+                            <b>প্রমানক (লিংক, প্রত‌্যয়ন পত্র, নিউজ লিংক, ইউটিউব লিংক, অডিও ভিডিও ফাইল ইত‌্যাদি, একাধিক দেওয়া যাবে, <span class="text-danger">ফাইল সর্বোচ্চ ২০ মেগাবাইট হতে পারবে।</span>) : </b><br/>
+                            <a href="javascript:;" id="add_link"><i class="icofont-plus-circle"></i> লিংক যোগ করুন</a> &nbsp;
+                            <a href="javascript:;" id="add_file"><i class="icofont-ui-file"></i> ফাইল যোগ করুন</a>
+                            <div id="file_zone">
+
+                                <input type="text" class="form-control" name="link[]" placeholder="লিংক" id="link"/><br/>
+                                <input type="file" class="form-control" name="file[]" placeholder="ফাইল" id="file"/><br/>
+                            </div>
+                        </div>
+                        <div class="form-group text-center">
+                            <p class="text-justify">উপরে প্রদত্ত তথ‌্য এবং সংযুক্তি সমূহ আমার জানামতে সঠিক। পরবর্তীতে কোন ব‌্যত‌্যয় পরিলক্ষিত হলে এ বিষয়ে কর্তৃপক্ষের সিদ্ধান্ত চুড়ান্ত বলে গণ‌্য হবে এবং আমি কর্তৃপক্ষের সিদ্ধান্ত মেনে চলব।</p> <br/><br/>
+                            <input type="submit" value="আবেদন সাবমিট করুন" class="btn btn-primary"/>
+                        </div>
+                    </form>
+                    <?php
+                } else {
+                    ?>
+                <h4 class="text-center text-danger">রেজিস্ট্রেশনের সময় শেষ।</h4>
+                    <?php
+                }
+                ?>
 
             </div>
 
