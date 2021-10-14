@@ -94,7 +94,7 @@ class ApplicationController extends Controller {
         $Links = [];
         if ($request->link != null) {
             foreach ($request->link as $link) {
-                if (!empty($Link)) {
+                if (!empty($link)) {
                     $Links[] = $link;
                 }
             }
