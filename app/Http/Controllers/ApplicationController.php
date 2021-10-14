@@ -27,6 +27,10 @@ class ApplicationController extends Controller {
         return view('new-admin.Application.view', ['id' => $id, 'title' => 'Individual Application']);
     }
 
+    public function print(Request $request, $id) {
+        return view('new-admin.Application.print', ['id' => $id, 'title' => 'Individual Application']);
+    }
+
     public function index(Request $request) {
 
 
