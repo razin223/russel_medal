@@ -17,7 +17,7 @@
                         <td style="width: 150px">Name: </td>
                         <td colspan="3">{{$User->name}}</td>
                         <td rowspan="4">
-                            <img src="{{$User->picture}}" style="max-width: 100px; max-height: 100px; float: right"/>
+                            <img src="{{$User->picture}}" style="max-width: 100px; max-height: 100px; "/>
                         </td>
                     </tr>
                     
