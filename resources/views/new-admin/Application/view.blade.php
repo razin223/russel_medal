@@ -7,6 +7,9 @@
         $Data = \App\Application::find($id);
         $User = $Data->getUser;
         $Sector = $Data->getSector;
+        $DateCheck = "2021-10-14";
+
+        $Age = \Carbon\Carbon::parse($User->date_of_birth)->diff(\Carbon\Carbon::parse($DateCheck))->format('%y year, %m month, %d days');
 
         if ($Data != null) {
             ?>
@@ -16,14 +19,14 @@
                     <tr>
                         <td style="width: 150px">Name: </td>
                         <td colspan="3">{{$User->name}}</td>
-                        <td rowspan="4">
+                        <td rowspan="5">
                             <img src="{{$User->picture}}" style="max-width: 100px; max-height: 100px; "/>
                         </td>
                     </tr>
-                    
+
                     <tr>
                         <td>Date of Birth: </td>
-                        <td>{{date("d-m-Y",strtotime($User->date_of_birth))}}</td>
+                        <td>{{date("d-m-Y",strtotime($User->date_of_birth))}} ({{$Age}} till 14-10-2021)</td>
                         <td style="width: 150px">Gender: </td>
                         <td>{{$User->gender}}</td>
                     <tr/>
