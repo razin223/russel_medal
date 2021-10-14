@@ -20,6 +20,7 @@
                             <img src="{{$User->picture}}" style="max-width: 100px; max-height: 100px; float: right"/>
                         </td>
                     </tr>
+                    
                     <tr>
                         <td>Date of Birth: </td>
                         <td>{{date("d-m-Y",strtotime($User->date_of_birth))}}</td>
