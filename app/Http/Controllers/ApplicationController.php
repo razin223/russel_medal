@@ -15,8 +15,12 @@ class ApplicationController extends Controller {
     }
 
     public function list(Request $request) {
-        $Data = \App\Application::with('getSector', 'getUser')->paginate(100);
-        return view('new-admin.Application.index', ['SearchData' => $Data,'title'=>"Application List"]);
+        $Data = \App\Application::with('getSector', 'getUser');
+        if (!empty($request->sector_id)) {
+            $Data = $Data->where('sector_id', $request->sector_id);
+        }
+        $Data = $Data->paginate(100);
+        return view('new-admin.Application.index', ['SearchData' => $Data, 'title' => "Application List"]);
     }
 
     public function individual(Request $request, $id) {
