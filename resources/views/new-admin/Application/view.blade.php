@@ -88,7 +88,7 @@
                             if (count($Array['file'])) {
                                 foreach ($Array['file'] as $key => $value) {
                                     ?>
-                                    <a href="{{$value}}" target="_blank">File {{$key+1}}</a><br/>
+                                    <a href="{{$value}}" target="_blank">File {{$key+1}}</a> &nbsp; &nbsp; &nbsp;
                                     <?php
                                 }
                             }
