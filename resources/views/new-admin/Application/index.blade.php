@@ -3,6 +3,28 @@
 @section("content")
 <div class="row">
     <div class="col-12">
+        <form>
+            <div class="row">
+                <div class="col-md-4">
+                    <b>Sector</b>
+                    <select name="sector_id" class="form-control">
+                        <option value="">(select)</option>
+                        <?php
+                        foreach (\App\Sector::orderBy('sector_name', 'asc')->get() as $value) {
+                            echo "<option value='{$value->id}'";
+                            echo (request()->input('sector_id') == $value->id) ? "selected" : "";
+                            echo ">{$value->sector_name}</option>";
+                        }
+                        ?>
+                    </select>
+                </div>
+                <div class="col-12 text-center">
+                    <input type="submit" value="Search" class="btn btn-primary"/>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="col-12">
         <div class="table-responsive">
             <table class="table table-condensed">
                 <thead>
