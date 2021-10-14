@@ -15,8 +15,8 @@
                 <tbody>
                     <tr>
                         <td style="width: 150px">Name: </td>
-                        <td colspan="2">{{$User->name}}</td>
-                        <td>
+                        <td colspan="3">{{$User->name}}</td>
+                        <td rowspan="4">
                             <img src="{{$User->picture}}" style="max-width: 100px; max-height: 100px; float: right"/>
                         </td>
                     </tr>
@@ -39,47 +39,47 @@
                     </tr>
                     <tr>
                         <td>Father: </td>
-                        <td  colspan="3">{{$User->father_name}}</td>
+                        <td  colspan="4">{{$User->father_name}}</td>
                     </tr>
                     <tr>
                         <td>Mother: </td>
-                        <td  colspan="3">{{$User->mother_name}}</td>
+                        <td  colspan="4">{{$User->mother_name}}</td>
                     </tr>
                     <tr>
                         <td>Guardian: </td>
-                        <td  colspan="3">{{$User->guardian_name}}</td>
+                        <td  colspan="4">{{$User->guardian_name}}</td>
                     </tr>
                     <tr>
                         <td>Guardian Mobile: </td>
                         <td>{{$User->guardian_mobile_no}}</td>
                         <td>Guardian Email: </td>
-                        <td>{{$User->guardian_email}}</td>
+                        <td colspan="2">{{$User->guardian_email}}</td>
                     </tr>
 
                     <tr>
                         <td>Present Address: </td>
-                        <td  colspan="3">{{$User->address}}, District: {{$User->getDistrict->name}}, Division: {{$User->getDistrict->getDivision->name}}</td>
+                        <td  colspan="4">{{$User->address}}, District: {{$User->getDistrict->name}}, Division: {{$User->getDistrict->getDivision->name}}</td>
                     </tr>
                     <tr>
                         <td>Permanent Address: </td>
-                        <td  colspan="3">{{$User->permanent_address}}</td>
+                        <td  colspan="4">{{$User->permanent_address}}</td>
                     </tr>
                     <tr>
-                        <td colspan="4">
+                        <td colspan="5">
                             <h4 class="text-center">Application</h4>
                         </td>
                     </tr>
                     <tr>
                         <td>Contribution: </td>
-                        <td  colspan="3">{{$Data->heading}}</td>
+                        <td  colspan="4">{{$Data->heading}}</td>
                     </tr>
                     <tr>
                         <td>Contribution Details: </td>
-                        <td  colspan="3">{{$User->details}}</td>
+                        <td  colspan="4">{{$User->details}}</td>
                     </tr>
                     <tr>
                         <td>Attachments: </td>
-                        <td colspan="3">
+                        <td colspan="4">
                             <?php
                             $Array = json_decode($Data->attachments, true);
                             if (count($Array['link'])) {
