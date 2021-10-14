@@ -14,7 +14,7 @@
             <table class="table">
                 <tbody>
                     <tr>
-                        <td>Name: </td>
+                        <td style="width: 150px">Name: </td>
                         <td>{{$User->name}}</td>
                     </tr>
                 </tbody>
