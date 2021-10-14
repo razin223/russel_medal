@@ -26,7 +26,7 @@
 
                     <tr>
                         <td>Date of Birth: </td>
-                        <td style="width: 250px">{{date("d-m-Y",strtotime($User->date_of_birth))}}<br/> ({{$Age}} till 14-10-2021)</td>
+                        <td style="width: 350px">{{date("d-m-Y",strtotime($User->date_of_birth))}}<br/> ({{$Age}} till 14-10-2021)</td>
                         <td style="width: 150px">Gender: </td>
                         <td>{{$User->gender}}</td>
                     <tr/>
