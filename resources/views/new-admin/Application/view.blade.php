@@ -81,7 +81,7 @@
                     </tr>
                     <tr>
                         <td>Contribution Details: </td>
-                        <td  colspan="4">{{$User->details}}</td>
+                        <td  colspan="4">{{$Data->details}}</td>
                     </tr>
                     <tr>
                         <td>Attachments: </td>
