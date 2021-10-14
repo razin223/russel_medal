@@ -16,7 +16,7 @@
             <h4 class="text-center">{{$Sector->sector_name}}</h4>
             <table class="table table-bordered">
                 <tr>
-                    <td colspan="5" class="text-right">ID: {{$Data->id}}, Apply Date: {{date("d-m-Y h:i:sA",strtotime($Data->created_at))}}</td>
+                    <td colspan="5" class="text-right">Application ID: {{$Data->id}}, Apply Date: {{date("d-m-Y h:i:sA",strtotime($Data->created_at))}}</td>
                 </tr>
                 <tbody>
                     <tr>
