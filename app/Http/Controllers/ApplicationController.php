@@ -34,6 +34,16 @@ class ApplicationController extends Controller {
         return view('new-admin.Application.print', ['id' => $id, 'title' => 'Individual Application']);
     }
 
+    public function print_all(Request $request) {
+        $Data = \App\Application::with('getSector', 'getUser');
+        if (!empty($request->sector_id)) {
+            $Data = $Data->where('sector_id', $request->sector_id);
+        }
+        
+        $Data = $Data->get();
+        return view('new-admin.Application.printall', ['Data' => $Data]);
+    }
+
     public function modify(Request $request) {
         $Require = [
             'id' => 'required',
