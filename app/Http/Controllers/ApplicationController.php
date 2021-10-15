@@ -52,7 +52,7 @@ class ApplicationController extends Controller {
             return response(['message' => "Invalid data given to modify."], 422);
         }
 
-        $Data->status = $request->type;
+        $Data->status = $request->type . 'ed';
         $Data->save();
 
         return response(['status' => true]);
