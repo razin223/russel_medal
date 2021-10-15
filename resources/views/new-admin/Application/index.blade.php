@@ -23,7 +23,7 @@
                     <select name="status" class="form-control">
                         <option value="">(select)</option>
                         <?php
-                        foreach (['Processing', 'Accepeted', 'Rejected'] as $value) {
+                        foreach (['Processing', 'Accepted', 'Rejected'] as $value) {
                             echo "<option value='{$value}'";
                             echo (request()->input('status') == $value) ? "selected" : "";
                             echo ">{$value}</option>";
