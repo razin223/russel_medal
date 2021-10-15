@@ -105,6 +105,12 @@
                             ?>
                         </td>
                     </tr>
+                    <tr>
+                        <td>
+                            <a href="javascript:;" class="btn btn-success">Accept</a> &nbsp;&nbsp;
+                            <a href="javascript:;" class="btn btn-danger">Reject</a>
+                        </td>
+                    </tr>
                 </tbody>
             </table>
             <?php
