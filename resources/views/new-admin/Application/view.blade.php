@@ -106,7 +106,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>
+                        <td colspan="5" class="text-center">
                             <a href="javascript:;" class="btn btn-success">Accept</a> &nbsp;&nbsp;
                             <a href="javascript:;" class="btn btn-danger">Reject</a>
                         </td>
