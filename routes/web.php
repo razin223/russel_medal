@@ -126,6 +126,7 @@ Route::get("/Application/individual/{id}", 'ApplicationController@individual')->
 Route::get("/Application/individualprint/{id}", 'ApplicationController@print')->name('Application.individualprint');
 Route::get("/ExamView/{id}", 'ExamController@ExamView')->name('Exam.View');
 Route::post("/Photo_mass_update", 'PhotoController@mass_update')->name('Photo.mass_update');
+Route::get("/Application_modify", 'ApplicationController@modify')->name('Application.modify');
 
 Route::get("/test", function() {
     \Artisan::call('cache:clear');
