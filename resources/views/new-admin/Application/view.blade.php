@@ -111,8 +111,22 @@
                     </tr>
                     <tr>
                         <td colspan="5" class="text-center">
-                            <a href="javascript:;" class="btn btn-success">Accept</a> &nbsp;&nbsp;
-                            <a href="javascript:;" class="btn btn-danger">Reject</a>
+                            <?php
+                            if ($Data->status == 'Processing' || $Data->status == 'Rejected') {
+                                ?>
+                                <a href="javascript:;" class="btn btn-success">Accept</a> 
+                                <?php
+                            }
+                            ?>
+                            &nbsp;&nbsp;
+                            <?php
+                            if ($Data->status == 'Processing' || $Data->status == 'Accepeted') {
+                                ?>
+
+                                <a href="javascript:;" class="btn btn-danger">Reject</a
+                                <?php
+                            }
+                            ?>
                         </td>
                     </tr>
                 </tbody>
