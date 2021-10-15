@@ -128,7 +128,7 @@
                             }
                             ?>
 
-                            <a href="javascript:;" class="btn btn-default" id="save" style="display: none">Saving</a>
+                            <a href="javascript:;" class="btn btn-default" id="save" style="display: none"  >Saving</a>
                         </td>
                     </tr>
                 </tbody>
