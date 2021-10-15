@@ -154,7 +154,12 @@
                     url: "{{route('Application.modify')}}",
                     method: "GET",
                     data: {'id': ID, 'type': Type},
-                    success: function (data) {},
+                    success: function (data) {
+                        if (data.status) {
+                            alert("Application has been " + Type + "ed successfully.");
+                            window.location = window.location.href;
+                        }
+                    },
                     error: function (error, b) {
 
                         var message = JSON.parse(error.responseText);
