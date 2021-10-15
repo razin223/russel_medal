@@ -13,7 +13,7 @@
 
         if ($Data != null) {
             $StatusClass = "";
-            if ($Data->status == 'Accpeted') {
+            if ($Data->status == 'Accepted') {
                 $StatusClass = 'text-success';
             }
             if ($Data->status == 'Rejected') {
@@ -121,13 +121,13 @@
                             <?php
                             if ($Data->status == 'Processing' || $Data->status == 'Rejected') {
                                 ?>
-                                <a href="javascript:;" class="btn btn-success modify" data-id="{{$Data->id}}" data-type="Accepet">Accept</a> 
+                                <a href="javascript:;" class="btn btn-success modify" data-id="{{$Data->id}}" data-type="Accept">Accept</a> 
                                 <?php
                             }
                             ?>
                             &nbsp;&nbsp;
                             <?php
-                            if ($Data->status == 'Processing' || $Data->status == 'Accepeted') {
+                            if ($Data->status == 'Processing' || $Data->status == 'Accepted') {
                                 ?>
 
                                 <a href="javascript:;"  data-id="{{$Data->id}}" data-type="Reject" class="btn btn-danger modify">Reject</a>
