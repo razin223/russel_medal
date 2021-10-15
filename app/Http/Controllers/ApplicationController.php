@@ -34,6 +34,30 @@ class ApplicationController extends Controller {
         return view('new-admin.Application.print', ['id' => $id, 'title' => 'Individual Application']);
     }
 
+    public function modify(Request $request) {
+        $Require = [
+            'id' => 'required',
+            'type' => 'required',
+        ];
+
+        $Message = [
+            'id.required' => 'No data given to modify.',
+            'type.required' => 'Type not given.',
+        ];
+
+        $request->validate($Require, $Message);
+
+        $Data = \App\Application::find($request->id);
+        if ($Data == null) {
+            return response(['message' => "Invalid data given to modify."], 422);
+        }
+
+        $Data->status = $request->type;
+        $Data->save();
+
+        return response(['status' => true]);
+    }
+
     public function index(Request $request) {
 
 
