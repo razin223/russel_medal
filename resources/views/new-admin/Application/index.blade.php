@@ -18,6 +18,19 @@
                         ?>
                     </select>
                 </div>
+                <div class="col-md-4">
+                    <b>Status</b>
+                    <select name="status" class="form-control">
+                        <option value="">(select)</option>
+                        <?php
+                        foreach (['Processing', 'Accepeted', 'Rejected'] as $value) {
+                            echo "<option value='{$value}'";
+                            echo (request()->input('status') == $value) ? "selected" : "";
+                            echo ">{$value}</option>";
+                        }
+                        ?>
+                    </select>
+                </div>
                 <div class="col-12 text-center">
                     <input type="submit" value="Search" class="btn btn-primary"/>
                 </div>
@@ -36,6 +49,7 @@
                         <th>Heading</th>
                         <th>Details</th>
                         <th>Attachments</th>
+                        <th>Status</th>
                         <th>Modification</th>
                     </tr>
                 </thead>
@@ -76,6 +90,7 @@
                                 }
                                 ?>
                             </td>
+                            <td>{{$Data->status}}</td>
 
 
                             <td>
