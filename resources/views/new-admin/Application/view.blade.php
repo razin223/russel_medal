@@ -114,7 +114,7 @@
                             <?php
                             if ($Data->status == 'Processing' || $Data->status == 'Rejected') {
                                 ?>
-                                <a href="javascript:;" class="btn btn-success">Accept</a> 
+                                <a href="javascript:;" class="btn btn-success modify" data-id="{{$Data->id}}" data-type="Accepet">Accept</a> 
                                 <?php
                             }
                             ?>
@@ -123,7 +123,7 @@
                             if ($Data->status == 'Processing' || $Data->status == 'Accepeted') {
                                 ?>
 
-                                <a href="javascript:;" class="btn btn-danger">Reject</a
+                                <a href="javascript:;"  data-id="{{$Data->id}}" data-type="Reject" class="btn btn-danger modify">Reject</a
                                 <?php
                             }
                             ?>
@@ -141,4 +141,45 @@
     </div>
 
 </div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.modify').click(function () {
+            $('.modify').hide();
+            var ID = $(this).data('id');
+            var Type = $(this).data('type');
+
+            if (confirm("Do you really want to " + Type + " this application?")) {
+                $.ajax({
+                    url: "{{route('Application.modify')}}",
+                    method: "GET",
+                    data: {'id': ID, 'type': Type},
+                    success: function (data) {},
+                    error: function (error, b) {
+
+                        var message = JSON.parse(error.responseText);
+
+                        var Error = "";
+
+                        if (typeof error.status == 500) {
+                            Error += "System error";
+                        }
+
+                        if (typeof message.message != 'undefined') {
+                            Error += message.message;
+                        }
+
+                        if (typeof message.errors != 'undefined') {
+                            var ErrorMessages = message.errors;
+                            for (var i in ErrorMessages) {
+                                Error += "\n" + ErrorMessages[i][0];
+                            }
+                        }
+                        alert("Error\n" + Error);
+                    }
+                });
+            }
+        });
+    });
+</script>
 @endsection
