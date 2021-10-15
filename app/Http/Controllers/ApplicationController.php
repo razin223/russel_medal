@@ -19,6 +19,9 @@ class ApplicationController extends Controller {
         if (!empty($request->sector_id)) {
             $Data = $Data->where('sector_id', $request->sector_id);
         }
+        if (!empty($request->status)) {
+            $Data = $Data->where('status', $request->status);
+        }
         $Data = $Data->paginate(100);
         return view('new-admin.Application.index', ['SearchData' => $Data, 'title' => "Application List"]);
     }
