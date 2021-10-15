@@ -10,6 +10,11 @@
                 border: solid gray 1px;
                 vertical-align: top;
             }
+
+            table tr th{
+                border: solid gray 1px;
+                vertical-align: top;
+            }
         </style>
     </head>
     <?php
