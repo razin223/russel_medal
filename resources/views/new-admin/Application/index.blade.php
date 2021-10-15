@@ -38,7 +38,13 @@
         </form>
     </div>
     <div class="col-12">
-        <a href="{{route('Application.print_all')."?sector_id=".request()->input('sector_id')}}" class="btn btn-primary">Print</a>
+        <?php
+        if (!empty(request()->input('sector_id'))) {
+            ?>
+            <a href="{{route('Application.print_all')."?sector_id=".request()->input('sector_id')}}" class="btn btn-primary" target="_blank">Print</a>
+            <?php
+        }
+        ?>
         <div class="table-responsive">
             <table class="table table-condensed">
                 <thead>
