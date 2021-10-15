@@ -54,8 +54,8 @@
 
                         </td>
                         <td>
-                            Contribution: {{$Data->heading}}<br/><br/>
-                            Contribution Details: {{$Data->details}}
+                            Contribution: {{$value->heading}}<br/><br/>
+                            Contribution Details: {{$value->details}}
                         </td>
                     </tr>
                     <?php
