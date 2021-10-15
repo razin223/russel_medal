@@ -127,6 +127,8 @@
                                 <?php
                             }
                             ?>
+
+                            <a href="javascript:;" class="btn btn-default" id="save" style="display: none">Saving</a>
                         </td>
                     </tr>
                 </tbody>
@@ -145,22 +147,28 @@
 <script type="text/javascript">
     $(document).ready(function () {
         $('.modify').click(function () {
-            $('.modify').hide();
+
             var ID = $(this).data('id');
             var Type = $(this).data('type');
 
             if (confirm("Do you really want to " + Type + " this application?")) {
+                $('.modify').hide();
+                $("#save").show();
                 $.ajax({
                     url: "{{route('Application.modify')}}",
                     method: "GET",
                     data: {'id': ID, 'type': Type},
                     success: function (data) {
+                        $('.modify').show();
+                        $("#save").hide();
                         if (data.status) {
                             alert("Application has been " + Type + "ed successfully.");
                             window.location = window.location.href;
                         }
                     },
                     error: function (error, b) {
+                        $('.modify').show();
+                        $("#save").hide();
 
                         var message = JSON.parse(error.responseText);
 
