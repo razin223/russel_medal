@@ -12,11 +12,18 @@
         $Age = \Carbon\Carbon::parse($User->date_of_birth)->diff(\Carbon\Carbon::parse($DateCheck))->format('%y year, %m month, %d day');
 
         if ($Data != null) {
+            $StatusClass = "";
+            if ($Data->status == 'Accpeted') {
+                $StatusClass = 'text-success';
+            }
+            if ($Data->status == 'Rejected') {
+                $StatusClass = 'text-danger';
+            }
             ?>
             <h4 class="text-center">{{$Sector->sector_name}}</h4>
             <table class="table table-bordered">
                 <tr>
-                    <td colspan="5" class="text-right"><strong class=" float-left">{{$Data->status}}</strong>Application ID: {{$Data->id}}, Apply Date: {{date("d-m-Y h:i:sA",strtotime($Data->created_at))}}</td>
+                    <td colspan="5" class="text-right"><strong class=" float-left {{$StatusClass}}">{{$Data->status}}</strong>Application ID: {{$Data->id}}, Apply Date: {{date("d-m-Y h:i:sA",strtotime($Data->created_at))}}</td>
                 </tr>
                 <tbody>
                     <tr>
@@ -107,7 +114,7 @@
                     </tr>
                     <tr>
                         <td>Status</td>
-                        <td><h4>{{$Data->status}}</h4></td>
+                        <td><h4 class="{{$StatusClass}}">{{$Data->status}}</h4></td>
                     </tr>
                     <tr>
                         <td colspan="5" class="text-center">
@@ -123,7 +130,7 @@
                             if ($Data->status == 'Processing' || $Data->status == 'Accepeted') {
                                 ?>
 
-                            <a href="javascript:;"  data-id="{{$Data->id}}" data-type="Reject" class="btn btn-danger modify">Reject</a>
+                                <a href="javascript:;"  data-id="{{$Data->id}}" data-type="Reject" class="btn btn-danger modify">Reject</a>
                                 <?php
                             }
                             ?>
