@@ -123,7 +123,7 @@
                             if ($Data->status == 'Processing' || $Data->status == 'Accepeted') {
                                 ?>
 
-                                <a href="javascript:;"  data-id="{{$Data->id}}" data-type="Reject" class="btn btn-danger modify">Reject</a
+                            <a href="javascript:;"  data-id="{{$Data->id}}" data-type="Reject" class="btn btn-danger modify">Reject</a>
                                 <?php
                             }
                             ?>
