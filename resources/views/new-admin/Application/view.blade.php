@@ -14,16 +14,16 @@
         if ($Data != null) {
             $StatusClass = "";
             if ($Data->status == 'Accepted') {
-                $StatusClass = 'text-success';
+                $StatusClass = 'bg-success';
             }
             if ($Data->status == 'Rejected') {
-                $StatusClass = 'text-danger';
+                $StatusClass = 'bg-danger';
             }
             ?>
             <h4 class="text-center">{{$Sector->sector_name}}</h4>
             <table class="table table-bordered">
                 <tr>
-                    <td colspan="5" class="text-right"><strong class=" float-left {{$StatusClass}}">{{$Data->status}}</strong>Application ID: {{$Data->id}}, Apply Date: {{date("d-m-Y h:i:sA",strtotime($Data->created_at))}}</td>
+                    <td colspan="5" class="text-right {{$StatusClass}}"><strong class=" float-left ">{{$Data->status}}</strong>Application ID: {{$Data->id}}, Apply Date: {{date("d-m-Y h:i:sA",strtotime($Data->created_at))}}</td>
                 </tr>
                 <tbody>
                     <tr>
