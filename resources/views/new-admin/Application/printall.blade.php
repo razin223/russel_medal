@@ -8,6 +8,7 @@
 
             table tr td{
                 border: solid gray 1px;
+                vertical-align: top;
             }
         </style>
     </head>
@@ -33,7 +34,7 @@
                     $User = $value->getUser;
                     $Age = \Carbon\Carbon::parse($User->date_of_birth)->diff(\Carbon\Carbon::parse($DateCheck))->format('%y year, %m month, %d day');
                     ?>
-                    <tr>
+                    <tr style=" vertical-align: top">
                         <td>{{$Sl}}</td>
                         <td>{{$value->getSector->sector_name}}</td>
                         <td><img src="{{$value->getUser->picture}}" style="width: 1.5in"/></td>
